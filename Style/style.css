@@ -1,0 +1,266 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que a altura mínima da página seja igual à altura da janela de visualização */
+}
+.container {
+    flex: 1; /* Faz com que o contêiner ocupe o espaço restante vertical */
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.header {
+    padding: 15px;
+    background: #6200ea;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header img {
+    width: 24px;
+    height: 24px;
+}
+.footer {
+    padding: 10px;
+    background: #6200ea;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.balance {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+.balance h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+.balance p {
+    margin: 5px 0 0;
+    color: #666;
+}
+.menu-wrapper {
+    overflow: hidden; /* Esconder conteúdo além da largura do contêiner */
+}
+.menu {
+    display: flex;
+    transition: transform 0.3s ease; /* Adicionar transição suave para o efeito de deslizamento */
+}
+.menu div {
+    text-align: center;
+    width: 33.33%;
+    padding: 10px 0; /* Adicionando padding para espaçamento interno */
+    border-bottom: 1px solid #ddd; /* Adicionando borda inferior */
+}
+.menu div:last-child {
+    border-bottom: none; /* Removendo borda inferior do último item */
+}
+.menu div:hover {
+    background-color: #f5f5f5; /* Alterar cor de fundo ao passar o mouse */
+}
+.menu div img {
+    width: 48px;
+    height: 48px;
+    max-width: 100%;
+    height: auto;
+}
+.menu div p {
+    margin: 5px 0 0; /* Alterando margem do parágrafo */
+    font-size: 0.9em;
+    color: #666;
+}
+.loan-requests {
+    background-color: #ccc; /* Cor de fundo cinza */
+    padding: 20px; /* Adicionando algum espaço interno */
+    border-bottom: 1px solid #ddd; /* Adicionando uma borda inferior como separador */
+}
+
+.news {
+    flex-grow: 1; 
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.news img {
+    width: 100%; /* Ocupa 100% da largura da div .news */
+    height: auto; /* Mantém a proporção da imagem */
+    max-width: calc(100% - 40px); /* Mantém um pequeno espaçamento interno */
+    max-height: calc(100% - 40px); /* Mantém um pequeno espaçamento interno */
+    display: block; /* Remove espaço em branco abaixo da imagem */
+    margin: 20px auto 0 auto; /* Centra a imagem horizontalmente e adiciona um espaçamento superior */
+    box-sizing: border-box; /* Inclui o padding e border no tamanho total */
+}
+
+h4.underlined {
+    text-decoration: underline;
+}
+
+.purple-line {
+    height: 10px; /* Altura da linha roxa */
+    background-color: #6200ea;
+    color: #fff;; /* Cor roxa */
+}
+.profile-panel {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Inicialmente escondido */
+    width: 300px;
+    height: 100%;
+    background-color: #6200ea; /* Cor de fundo semelhante à aba principal */
+    color: #fff; /* Cor do texto semelhante à aba principal */
+    font-family: Arial, sans-serif; /* Fonte semelhante à aba principal */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease; /* Adiciona uma transição suave */
+    z-index: 999; /* Certifique-se de que o painel esteja acima de outros elementos */
+}
+
+.profile-panel h2, .help-panel h2 {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1.5em; /* Tamanho da fonte semelhante à aba principal */
+}
+
+.profile-panel p, .help-panel p {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.profile-panel img, .help-panel img {
+    width: 45px;
+    height: 45px;
+    margin-left: 0px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+/* Estilos para o painel lateral de ajuda */
+.help-panel {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Inicialmente escondido */
+    width: 300px;
+    height: 100%;
+    background-color: #6200ea; /* Cor de fundo semelhante à aba principal */
+    color: #fff; /* Cor do texto semelhante à aba principal */
+    font-family: Arial, sans-serif; /* Fonte semelhante à aba principal */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease; /* Adiciona uma transição suave */
+    z-index: 999; /* Certifique-se de que o painel esteja acima de outros elementos */
+} 
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+
+
+
+/* Estilo para a lightbox */
+.lightbox {
+    display: none; /* Inicialmente escondida */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
+    z-index: 9999; /* Garante que a lightbox esteja na frente de todos os outros elementos */
+    backdrop-filter: blur(10px); /* Aplica um filtro de desfoque ao fundo */
+    -webkit-backdrop-filter: blur(10px); /* Para compatibilidade com navegadores baseados em WebKit */
+}
+
+.lightbox-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 40px; /* Maior espaçamento interno */
+    border-radius: 10px; /* Borda mais arredondada */
+    text-align: center;
+    max-width: 80%; /* Largura máxima */
+    max-height: 80%; /* Altura máxima */
+    overflow: auto; /* Adiciona barras de rolagem se o conteúdo for maior que a caixa */
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    align-items: center; 
+}
+
+.lightbox-content h2 {
+    margin-bottom: 20px; /* Espaçamento entre o texto e os botões */
+}
+
+/* Estilo para os botões dentro da lightbox */
+.lightbox-content button {
+    background-color: purple; /* Cor de fundo roxa */
+    color: white; /* Cor do texto branca */
+    padding: 10px 20px; /* Maior espaçamento interno */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro ao passar por cima */
+    margin: 0 5px; /* Margem entre os botões */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 0 5px; /* Margem entre os botões */
+}
+
+.lightbox-content button:hover {
+    background-color: #6a1b9a; /* Altera a cor de fundo quando hover */
+}
+
+.button-container {
+    display: flex;
+}
+
+.lightbox-content button {
+    /* ... */
+    margin: 0 5px; /* Margem entre os botões */
+}
