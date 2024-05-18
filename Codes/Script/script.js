@@ -79,8 +79,52 @@ function handleSwipe() {
     }
 }
 
-//Carroulsel
+//Money function
 
+document.addEventListener('DOMContentLoaded', function () {
+    const paymentIcon = document.getElementById('payment-icon');
+
+    paymentIcon.addEventListener('click', function () {
+        // Adiciona a classe que aplica o filtro cinza
+        paymentIcon.classList.add('change-color');
+
+        // Redireciona para a próxima página após um pequeno atraso
+        setTimeout(() => {
+            window.location.href = 'payment_page.html'; 
+        }, 250); // 200ms de atraso pra ficar bonitinho
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const paymentIcon = document.getElementById('codebar-icon');
+
+    paymentIcon.addEventListener('click', function () {
+        // Adiciona a classe que aplica o filtro cinza
+        paymentIcon.classList.add('change-color');
+
+        // Redireciona para a próxima página após um pequeno atraso
+        setTimeout(() => {
+            window.location.href = 'code_bar_page.html'; 
+        }, 250); // 200ms de atraso pra ficar bonitinho
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const paymentIcon = document.getElementById('creditcard-icon');
+
+    paymentIcon.addEventListener('click', function () {
+        // Adiciona a classe que aplica o filtro cinza
+        paymentIcon.classList.add('change-color');
+
+        // Redireciona para a próxima página após um pequeno atraso
+        setTimeout(() => {
+            window.location.href = 'credit_card_page.html'; 
+        }, 250); // 200ms de atraso pra ficar bonitinho
+    });
+});
+
+
+//Carroulsel
 document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.querySelector('.carousel');
     const items = document.querySelectorAll('.carousel-item');

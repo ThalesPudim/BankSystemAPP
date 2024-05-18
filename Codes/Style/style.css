@@ -264,3 +264,9 @@ h4.underlined {
     /* ... */
     margin: 0 5px; /* Margem entre os botões */
 }
+
+.change-color {
+    background-color: gray; /* Alterar para a cor desejada */
+    transition: background-color 0.3s ease;
+    border-radius: 50%; /* Apenas se desejar bordas arredondadas */
+}
