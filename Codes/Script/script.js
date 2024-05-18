@@ -14,7 +14,6 @@ function toggleProfilePanel() {
         profilePanel.style.left = '-300px';
     }
 }
-
 // Função para mostrar/ocultar o painel lateral de ajuda
 function toggleHelpPanel() {
     var profilePanel = document.getElementById('profilePanel');
@@ -31,27 +30,22 @@ function toggleHelpPanel() {
         helpPanel.style.right = '-300px';
     }
 }
-
 // Função para fechar o painel lateral de perfil
 function closeProfilePanel() {
     document.getElementById('profilePanel').style.left = '-300px';
 }
-
 // Função para fechar o painel lateral de ajuda
 function closeHelpPanel() {
     document.getElementById('helpPanel').style.right = '-300px';
 }
-
 // Adicione um evento de clique na imagem do usuário para mostrar/ocultar o painel lateral de perfil
 document.querySelector('.header img[alt="User"]').addEventListener('click', function() {
     toggleProfilePanel();
 });
-
 // Adicione um evento de clique na imagem de ajuda para mostrar/ocultar o painel lateral de ajuda
 document.querySelector('.header img[alt="Help"]').addEventListener('click', function() {
     toggleHelpPanel();
 });
-
 // Adicione um evento de clique na página inicial para fechar os painéis laterais
 document.querySelector('body').addEventListener('click', function(event) {
     // Verifique se o clique ocorreu fora dos painéis laterais
@@ -63,7 +57,6 @@ document.querySelector('body').addEventListener('click', function(event) {
         closeHelpPanel();
     }
 });
-
 // Adicione eventos de toque para fechar os painéis laterais quando o usuário desliza para a esquerda ou direita
 var touchstartX = 0;
 var touchendX = 0;
@@ -86,9 +79,33 @@ function handleSwipe() {
     }
 }
 
+//Carroulsel
+
+document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('.carousel');
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    let index = 0;
+
+    function showItem(newIndex) {
+        index = (newIndex + totalItems) % totalItems; // Garante que o índice seja circular
+        const offset = -index * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
+    }
+
+    document.querySelector('.carousel-control.next').addEventListener('click', function () {
+        showItem(index + 1);
+    });
+
+    document.querySelector('.carousel-control.prev').addEventListener('click', function () {
+        showItem(index - 1);
+    });
+
+    showItem(index); // Inicializa a posição do carousel
+});
 
 
-
+//LightBox
 document.addEventListener("DOMContentLoaded", function() {
     // Obtém uma referência ao botão de deslogar
     const logoutButton = document.getElementById('logoutButton');
