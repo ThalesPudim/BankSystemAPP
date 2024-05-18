@@ -1,17 +1,28 @@
+document.getElementById("loginButton").addEventListener("click", function() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-function login() {
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-
-        // lógica de verificação de login
-
-        // Exemplo simples: Se o campo de nome de usuário e senha não estiverem vazios, redirecione para a página principal
-        if (username.trim() !== "" && password.trim() !== "") {
-            window.location.href = "home_page.html"; // Substitua "pagina_principal.html" pelo caminho da sua página principal
+    fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+            'username': username,
+            'password': password
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "success") {
+            // Redireciona para a página home_page.html
+            window.location.href = 'home_page.html';
         } else {
-            alert("Por favor, preencha todos os campos."); // Mostrar mensagem de erro se os campos estiverem vazios
+            alert("Login ou senha incorretos!");
         }
-    }
-
-// Adicionando um ouvinte de evento para o botão de login
-document.getElementById("loginButton").addEventListener("click", login);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("Ocorreu um erro ao tentar fazer login.");
+    });
+});

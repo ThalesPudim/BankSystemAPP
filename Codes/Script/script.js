@@ -203,6 +203,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Adiciona um evento de clique ao botão "Sim"
     confirmLogoutButton.addEventListener('click', function() {
 
-        window.location.href = "login_page.html";
+        window.location.href = "index.html";
     });
 });
