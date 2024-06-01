@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco - Protótipo</title>
+    <link rel="stylesheet" type="text/css" href="../Style/payment.css?v=2">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon-container">
+                <img src="../images/Sample_User_Icon.png" alt="User" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid black;">
+            </div>
+            <div class="icon-container">
+            <img src="../images/QuestionMark.png" alt="Help" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid black;">
+            </div>
+        </div>
+        <div class="balance">
+            <h2>Saldo</h2>
+            <p>R$ X.XXX,XX</p>
+        </div>
+        <div class="BalanceHistory">
+            <h2>Históricos de transferencia</h2>
+            <div class="history-window">
+                <!-- Aqui você pode inserir suas informações -->
+                <p>Transferência realizada</p>
+                <p>Transferência realizada</p>
+                <p>Transferência realizada</p>
+                <p>Transferência realizada</p>
+                <p>Transferência realizada</p>
+                <p>Transferência realizada</p>
+                <p>Transferência realizada</p>
+            </div>
+        </div>
+        
+        <div class="Payment" id="paymentButton">
+            <h2>Realizar pagamento</h2>
+        </div>
+        
+        <div class="PaymentScreen" id="paymentScreen">
+            <div class="header">
+                <div class="icon-container">
+                    <img id="closeButton" src="../images/Logout.png" alt="User" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid black;">
+                </div>
+            </div>
+            <h2 class="info-title">Payment information</h2>
+            <div class="payment-form">
+                <div class="input-group">
+                    <input type="text" id="emailInput" placeholder="Email do destinatário">
+                </div>
+                <div class="input-group">
+                    <input type="number" id="amountInput" placeholder="Quantia a transferir">
+                </div>
+            <button id="sendButton">Enviar</button>
+
+
+            <div class="news">
+                <h2>Report</h2>
+                <div class="carousel-container">
+                    <div class="carousel">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="purple-line"></div> 
+        </div>
+    </div>
+    <script src="../Script/PaymentScript.js"></script>
+</body>
+</html>

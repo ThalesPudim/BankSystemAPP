@@ -192,7 +192,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Adiciona um evento de clique ao botão "Cancelar"
     cancelButton.addEventListener('click', function() {
-        // Imprime uma mensagem no console quando o botão "Cancelar" for clicado
         // Fecha a lightbox sem fazer logout
         lightbox.style.display = 'none';
     });
@@ -202,7 +201,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Adiciona um evento de clique ao botão "Sim"
     confirmLogoutButton.addEventListener('click', function() {
-
-        window.location.href = "index.html";
+        window.location.href = "../Pages/index.html";
     });
 });

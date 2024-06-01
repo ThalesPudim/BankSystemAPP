@@ -1,17 +1,6 @@
 <?php
-// Conexão com o banco de dados
-$servername = "localhost"; 
-$username = "root";
-$password = "";
-$dbname = "HringBank"; 
-
-// Cria conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verifica conexão
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
+// Inclui o arquivo de conexão
+include 'dbconnection.php';
 
 // Recebe dados do formulário
 $email = $_POST['email'];
