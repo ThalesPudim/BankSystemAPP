@@ -78,7 +78,9 @@ body {
     font-size: 0.9em;
     color: #666;
 }
+
 .loan-requests {
+    flex-grow: 1; 
     background-color: #ccc; /* Cor de fundo cinza */
     padding: 20px; /* Adicionando algum espaço interno */
     border-bottom: 1px solid #ddd; /* Adicionando uma borda inferior como separador */
@@ -87,21 +89,13 @@ body {
 .news {
     flex-grow: 1; 
     padding: 20px;
+    background-color: #ccc;
     border-bottom: 1px solid #ddd;
     text-align: left;
     position: relative;
     overflow: hidden;
 }
 
-.news img {
-    width: 100%; /* Ocupa 100% da largura da div .news */
-    height: auto; /* Mantém a proporção da imagem */
-    max-width: calc(100% - 40px); /* Mantém um pequeno espaçamento interno */
-    max-height: calc(100% - 40px); /* Mantém um pequeno espaçamento interno */
-    display: block; /* Remove espaço em branco abaixo da imagem */
-    margin: 20px auto 0 auto; /* Centra a imagem horizontalmente e adiciona um espaçamento superior */
-    box-sizing: border-box; /* Inclui o padding e border no tamanho total */
-}
 
 h4.underlined {
     text-decoration: underline;
@@ -164,47 +158,27 @@ h4.underlined {
     z-index: 999; /* Certifique-se de que o painel esteja acima de outros elementos */
 } 
 
-.carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+.carousel-container.alert {
+    padding: 20px;
+    background-color: #fff3cd; /* Cor de fundo amarela clara */
+    color: #856404; /* Cor do texto marrom escuro */
+    border: 1px solid #ffeeba; /* Borda amarela clara */
+    border-radius: 5px; /* Cantos arredondados */
+    margin: 20px 0; /* Margem acima e abaixo */
+    font-family: 'Poppins', sans-serif; /* Fonte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
-.carousel {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
+.carousel-container.alert h2 {
+    margin-top: 0; /* Remove margem superior */
+    font-size: 18px; /* Tamanho da fonte */
+    color: #856404; /* Cor do título */
 }
 
-.carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
+.carousel-container.alert p {
+    margin: 10px 0; /* Margem superior e inferior */
+    font-size: 16px; /* Tamanho da fonte */
 }
-
-.carousel-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.carousel-control.prev {
-    left: 10px;
-}
-
-.carousel-control.next {
-    right: 10px;
-}
-
 
 
 
@@ -369,18 +343,62 @@ h4.underlined {
     background-color: #6200ea;
     color: var(--white-color);
     font-size: 16px;
-    font-family: 'Poppins', sans-serif; /* Definindo a fonte */
-    font-weight: 600; /* Definindo o peso da fonte */
-    text-transform: uppercase; /* Convertendo o texto para maiúsculas */
-    letter-spacing: 1px; /* Adicionando espaçamento entre as letras */
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 600;
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: auto;
     display: block;
+    margin-bottom: 2em; 
 }
-
 .PaymentScreen .input-group:focus-within input {
-    border: 1px solid #ddd; /* Adicionando borda de 1px sólida com cor cinza */
-    border-radius: 10px; /* Adicionando bordas arredondadas */
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
 }
 
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.loading-animation {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.success-message {
+    display: none;
+    text-align: center;
+    color: green;
+}
+
+.success-message img {
+    margin-bottom: 10px;
+}

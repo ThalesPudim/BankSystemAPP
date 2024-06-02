@@ -55,11 +55,20 @@
             <button id="sendButton">Enviar</button>
 
 
-            <div class="news">
+            <div class="loan-requests">
                 <h2>Report</h2>
-                <div class="carousel-container">
-                    <div class="carousel">
-
+                <div class="carousel-container alert">
+                    <h2>Attention:</h2>
+                    <p>Por favor, verifique todas as informações antes de confirmar a transferência. Uma vez que o botão de envio seja pressionado, as ações não poderão ser revertidas.</p>
+                </div>
+            </div>
+    
+            <div id="paymentLightbox" class="lightbox">
+                <div class="lightbox-content">
+                    <div id="loadingAnimation" class="loading-animation"></div>
+                    <div id="successMessage" class="success-message">
+                        <img src="../images/sucess.png" alt="Success" style="width: 50px; height: 50px;">
+                        <p>Pagamento realizado com sucesso!</p>
                     </div>
                 </div>
             </div>

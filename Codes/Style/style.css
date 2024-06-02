@@ -84,25 +84,6 @@ body {
     border-bottom: 1px solid #ddd; /* Adicionando uma borda inferior como separador */
 }
 
-.news {
-    flex-grow: 1; 
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-    position: relative;
-    overflow: hidden;
-}
-
-.news img {
-    width: 100%; /* Ocupa 100% da largura da div .news */
-    height: auto; /* Mantém a proporção da imagem */
-    max-width: calc(100% - 40px); /* Mantém um pequeno espaçamento interno */
-    max-height: calc(100% - 40px); /* Mantém um pequeno espaçamento interno */
-    display: block; /* Remove espaço em branco abaixo da imagem */
-    margin: 20px auto 0 auto; /* Centra a imagem horizontalmente e adiciona um espaçamento superior */
-    box-sizing: border-box; /* Inclui o padding e border no tamanho total */
-}
-
 h4.underlined {
     text-decoration: underline;
 }

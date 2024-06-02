@@ -12,7 +12,7 @@ document.getElementById('paymentButton').addEventListener('click', function() {
 });
 
 document.getElementById('closeButton').addEventListener('click', function() {
-    togglePaymentScreen(); // Chamando a função para fechar a tela de pagamento
+    togglePaymentScreen();
 });
 
 document.getElementById('sendButton').addEventListener('click', function() {
@@ -26,12 +26,27 @@ document.getElementById('sendButton').addEventListener('click', function() {
         return; // Sai da função se algum campo estiver vazio
     }
 
-    // Aqui você pode adicionar a lógica para enviar os dados para o backend
-    // Por enquanto, apenas exibindo os valores inseridos
-    console.log('Email:', email);
-    console.log('Quantia:', amount);
+    // Exibir a lightbox de loading
+    var lightbox = document.getElementById('paymentLightbox');
+    var loadingAnimation = document.getElementById('loadingAnimation');
+    var successMessage = document.getElementById('successMessage');
 
-    // Resetar os campos de entrada após o envio bem-sucedido
-    document.getElementById('emailInput').value = '';
-    document.getElementById('amountInput').value = '';
+    lightbox.style.display = 'flex';
+    loadingAnimation.style.display = 'block';
+    successMessage.style.display = 'none';
+
+    // Simular um tempo de espera para o processamento do pagamento
+    setTimeout(function() {
+        loadingAnimation.style.display = 'none';
+        successMessage.style.display = 'block';
+
+        // Fechar a lightbox após 2 segundos
+        setTimeout(function() {
+            lightbox.style.display = 'none';
+            togglePaymentScreen();
+            // Resetar os campos de entrada após o envio bem-sucedido
+            document.getElementById('emailInput').value = '';
+            document.getElementById('amountInput').value = '';
+        }, 2000);
+    }, 3000); // Simula 3 segundos de tempo de processamento
 });
