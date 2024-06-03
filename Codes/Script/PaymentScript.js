@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
     backIcon.addEventListener('click', function () {
         // Redireciona para a próxima página após um pequeno atraso
         setTimeout(() => {
-            window.location.href = 'home_page.html'; 
+            window.location.href = 'home_page.php'; 
         }, 250); 
     });
 });

@@ -20,7 +20,7 @@ function login() {
             var response = xhr.responseText;
             if (response === "success") {
                 // Redireciona para a página de sucesso
-                window.location.href = "home_page.html";
+                window.location.href = "home_page.php";
             } else {
                 // Exibe uma mensagem de erro
                 alert("E-mail ou senha incorretos. Por favor, tente novamente.");

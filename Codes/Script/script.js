@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Redireciona para a próxima página após um pequeno atraso
         setTimeout(() => {
-            window.location.href = 'payment_page.html'; 
+            window.location.href = 'payment_page.php'; 
         }, 250); // 200ms de atraso pra ficar bonitinho
     });
 });
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Redireciona para a próxima página após um pequeno atraso
         setTimeout(() => {
-            window.location.href = 'code_bar_page.html'; 
+            window.location.href = 'code_bar_page.php'; 
         }, 250); // 200ms de atraso pra ficar bonitinho
     });
 });
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Redireciona para a próxima página após um pequeno atraso
         setTimeout(() => {
-            window.location.href = 'credit_card_page.html'; 
+            window.location.href = 'credit_card_page.php'; 
         }, 250); // 200ms de atraso pra ficar bonitinho
     });
 });
