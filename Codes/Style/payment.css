@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: montserrat;
     margin: 0;
     padding: 0;
     background-color: #ff0000;
@@ -17,7 +19,7 @@ body {
 }
 .header {
     padding: 15px;
-    background: #6200ea;
+    background: #003366;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -29,7 +31,7 @@ body {
 }
 .footer {
     padding: 10px;
-    background: #6200ea;
+    background: #003366;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -39,6 +41,7 @@ body {
     padding: 20px;
     border-bottom: 1px solid #ddd;
     text-align: left;
+    background-color: #D3D3D3;
 }
 .balance h2 {
     margin: 0;
@@ -103,7 +106,7 @@ h4.underlined {
 
 .purple-line {
     height: 10px; /* Altura da linha roxa */
-    background-color: #6200ea;
+    background-color: #003366;
     color: #fff;; /* Cor roxa */
     position: absolute;
     bottom: 0;
@@ -265,12 +268,37 @@ h4.underlined {
 
 .Payment {
     padding: 20px;
-    text-align: left;
-    background-color: #f9f9f9;
+    margin: 50px;
+    text-align: center;
+    background-color: #003366;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+}
+
+
+.Payment h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 28px;
+    right: 0;
+    background: #fff;
+    transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
+}
+
+.Payment h2:hover::after {
+    width: 100%;
+    left: 0;
+    background: #fff;
+}
+
+.Payment h2:hover{
+    cursor: pointer;
 }
 
 .BalanceHistory h2, .Payment h2 {
@@ -401,4 +429,18 @@ h4.underlined {
 
 .success-message img {
     margin-bottom: 10px;
+}
+
+.icon-container img{
+    transition: 0.3s;
+}
+
+.icon-container img:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.sendButton{
+    background-color: #003366;
 }
