@@ -164,10 +164,9 @@ document.addEventListener("DOMContentLoaded", function() {
         // Torna a lightbox visível
         lightbox.style.display = 'block';
 
-        // Adiciona um evento de clique ao documento inteiro
+        // Adiciona um evento de clique ao documento inteiro para fechar a lightbox ao clicar fora dela
         document.addEventListener('click', clickOutsideLightbox);
 
-        // Função para fechar a lightbox se clicar fora dela
         function clickOutsideLightbox(event) {
             if (event.target === lightbox) {
                 // Fecha a lightbox
@@ -178,29 +177,20 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Obtém uma referência ao botão de fechar na lightbox
-    const closeButton = document.getElementById('cancelButton');
-
-    // Adiciona um evento de clique ao botão de fechar na lightbox
-    closeButton.addEventListener('click', function() {
-        // Torna a lightbox invisível novamente
-        lightbox.style.display = 'none';
-    });
-
     // Obtém uma referência ao botão "Cancelar" dentro da lightbox
     const cancelButton = document.getElementById('cancelButton');
 
-    // Adiciona um evento de clique ao botão "Cancelar"
+    // Adiciona um evento de clique ao botão "Cancelar" para fechar a lightbox
     cancelButton.addEventListener('click', function() {
-        // Fecha a lightbox sem fazer logout
+        // Torna a lightbox invisível novamente
         lightbox.style.display = 'none';
     });
 
     // Obtém uma referência ao botão "Sim" dentro da lightbox
     const confirmLogoutButton = document.getElementById('confirmLogoutButton');
 
-    // Adiciona um evento de clique ao botão "Sim"
+    // Adiciona um evento de clique ao botão "Sim" para redirecionar para logout.php
     confirmLogoutButton.addEventListener('click', function() {
-        window.location.href = "../Pages/index.html";
+        window.location.href = '../DBConnection/logout.php';
     });
 });
