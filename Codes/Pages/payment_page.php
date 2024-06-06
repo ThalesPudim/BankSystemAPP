@@ -10,19 +10,34 @@ $sql = "
 SELECT 
     Transactions.Amount,
     Transactions.TransactionDate,
-    UserTransactions.UserID,
-    UserTransactions.TransactionID,
-    TransactionType.TypeName AS TransactionType
+    Transactions.SenderID,
+    Transactions.ReceiverID,
+    'send' AS TransactionType,
+    Receiver.Email AS Email
 FROM 
     Transactions
 JOIN 
-    UserTransactions ON Transactions.TransactionID = UserTransactions.TransactionID
-JOIN
-    TransactionType ON UserTransactions.TransactionID = TransactionType.TransactionTypeID
+    Users AS Receiver ON Transactions.ReceiverID = Receiver.UserID
 WHERE 
-    UserTransactions.UserID = '$user_id'
+    Transactions.SenderID = '$user_id'
+
+UNION
+
+SELECT 
+    Transactions.Amount,
+    Transactions.TransactionDate,
+    Transactions.SenderID,
+    Transactions.ReceiverID,
+    'receive' AS TransactionType,
+    Sender.Email AS Email
+FROM 
+    Transactions
+JOIN 
+    Users AS Sender ON Transactions.SenderID = Sender.UserID
+WHERE 
+    Transactions.ReceiverID = '$user_id'
 ORDER BY 
-    Transactions.TransactionDate DESC
+    TransactionDate DESC
 ";
 
 $result = $conn->query($sql);
@@ -59,11 +74,12 @@ $conn->close();
                         $amount = $row['Amount'];
                         $transaction_date = $row['TransactionDate'];
                         $transaction_type = $row['TransactionType'];
-                        
+                        $email = $row['Email'];
+                
                         // Define o sinal baseado no tipo de transação
                         $sign = $transaction_type == 'send' ? '-' : '+';
-
-                        echo "<p>$transaction_date - $sign R$ " . number_format($amount, 2, ',', '.') . "</p>";
+                
+                        echo "<p>$transaction_date : $sign R$ " . number_format($amount, 2, ',', '.') . " - $email</p>";
                     }
                 } else {
                     echo "<p>Sem transações registradas.</p>";

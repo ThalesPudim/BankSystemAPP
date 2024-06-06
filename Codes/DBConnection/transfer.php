@@ -20,16 +20,21 @@ $conn->begin_transaction();
 
 try {
     // Obtém o saldo atual do usuário
-    $stmt = $conn->prepare("SELECT Balance FROM Users WHERE UserID = ?");
+    $stmt = $conn->prepare("SELECT Balance, Email FROM Users WHERE UserID = ?");
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
-    $stmt->bind_result($balance);
+    $stmt->bind_result($balance, $user_email);
     $stmt->fetch();
     $stmt->close();
 
     // Verifica se o usuário possui saldo suficiente
     if ($balance < $amount) {
         throw new Exception("Saldo insuficiente");
+    }
+
+    // Verifica se o usuário está tentando enviar dinheiro para si mesmo
+    if ($user_email === $recipient_email) {
+        throw new Exception("Você não pode enviar dinheiro para si mesmo.");
     }
 
     // Obtém os dados do destinatário
@@ -58,8 +63,8 @@ try {
     $stmt->close();
 
     // Registra a transação
-    $stmt = $conn->prepare("INSERT INTO Transactions (Amount, TransactionDate) VALUES (?, NOW())");
-    $stmt->bind_param("d", $amount);
+    $stmt = $conn->prepare("INSERT INTO Transactions (Amount, TransactionDate, SenderID, ReceiverID) VALUES (?, NOW(), ?, ?)");
+    $stmt->bind_param("dii", $amount, $user_id, $recipient_id);
     $stmt->execute();
     $transaction_id = $stmt->insert_id;
     $stmt->close();
@@ -77,12 +82,13 @@ try {
     $stmt->close();
 
     // Define o tipo de transação para o remetente e destinatário
-    $stmt = $conn->prepare("INSERT INTO TransactionType (TransactionTypeID, TypeName) VALUES (?, ?) ON DUPLICATE KEY UPDATE TypeName = VALUES(TypeName)");
-    $send_type = 'send';
-    $receive_type = 'receive';
-    $stmt->bind_param("is", $transaction_id, $send_type);
+    $stmt = $conn->prepare("INSERT INTO TransactionType (TransactionTypeID, TypeName) VALUES (?, 'send') ON DUPLICATE KEY UPDATE TypeName = 'send'");
+    $stmt->bind_param("i", $transaction_id);
     $stmt->execute();
-    $stmt->bind_param("is", $transaction_id, $receive_type);
+    $stmt->close();
+
+    $stmt = $conn->prepare("INSERT INTO TransactionType (TransactionTypeID, TypeName) VALUES (?, 'receive') ON DUPLICATE KEY UPDATE TypeName = 'receive'");
+    $stmt->bind_param("i", $transaction_id);
     $stmt->execute();
     $stmt->close();
 

@@ -91,14 +91,14 @@ include '../DbConnection/auth.php';
     </div>
 
     <div id="logoutLightbox" class="lightbox">
-        <div class="lightbox-content">
-            <h2>Deseja realmente deslogar?</h2>
-            <div class="button-container">
-                <button id="confirmLogoutButton" type="button">Sim</button>
-                <button id="cancelButton" type="button">Cancelar</button>
-            </div>
+    <div class="lightbox-content">
+        <h2>Deseja realmente deslogar?</h2>
+        <div class="button-container">
+            <button id="confirmLogoutButton" type="button">Sim</button>
+            <button id="cancelButton" type="button">Cancelar</button>
         </div>
     </div>
+</div>
     <!-- Referenciando Script-->
     <script src="../Script/Script.js"></script>
 </body>
