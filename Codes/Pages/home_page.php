@@ -24,7 +24,14 @@ include '../DbConnection/auth.php';
         </div>
         <div class="balance">
             <h2>Saldo</h2>
-            <p style="color: black; font-weight: bold;">R$: <?php echo number_format($_SESSION['balance'], 2, ',', '.'); ?></p>
+            <div class="balance-container">
+                <input type="checkbox" id="toggle-balance" class="toggle-checkbox">
+                <label for="toggle-balance" class="toggle-label">
+                    <span class="eye-icon"><img src="../images/saldo-visivel.png" alt="" style="max-width: 50px;"></span>
+                    <span class="eye-icon-hidden"><img src="../images/saldo-nao-visivel.png" alt="" style="max-width: 50px;"></span>
+                </label>
+                <p class="balance fadeInLeft" id="balance">R$: <?php echo number_format($_SESSION['balance'], 2, ',', '.'); ?></p>
+            </div>
         </div>
         <div class="menu-wrapper">
             <div class="menu" id="menu">

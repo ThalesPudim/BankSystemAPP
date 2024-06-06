@@ -20,12 +20,25 @@ include 'dbconnection.php';
 
 // Obtém o tipo de conta do usuário logado
 $account_type_id = $_SESSION['account_type_id'];
-$sql = "SELECT Type FROM AccountTypes WHERE AccountTypeID='$account_type_id'";
-$result = $conn->query($sql);
-$account_type = '';
-if ($result->num_rows > 0) {
-    $account_type_row = $result->fetch_assoc();
-    $account_type = $account_type_row['Type'];  // Certifique-se de que o nome da coluna está correto
+
+// Usa prepared statements para evitar SQL injection
+$sql = "SELECT Type FROM AccountTypes WHERE AccountTypeID = ?";
+$stmt = $conn->prepare($sql);
+if ($stmt) {
+    $stmt->bind_param("i", $account_type_id);
+    $stmt->execute();
+    $stmt->bind_result($account_type);
+    $stmt->fetch();
+    $stmt->close();
+
+    // Verifica se o tipo de conta foi encontrado
+    if (!$account_type) {
+        echo "Erro: Tipo de conta não encontrado.";
+        exit();
+    }
+} else {
+    echo "Erro: Falha na preparação da consulta.";
+    exit();
 }
 
 $conn->close();
