@@ -266,42 +266,28 @@ h4.underlined {
     transition: transform 0.3s ease;
 }
 
-.Payment {
-    padding: 20px;
-    margin: 50px;
-    text-align: center;
+.Payment{
     background-color: #003366;
-    margin-bottom: 20px;
+    color: white;
+    margin: 25px;
+    height: 90px;
+    border: none;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: montserrat;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-
-.Payment h2::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    display: block;
-    margin-top: 28px;
-    right: 0;
-    background: #fff;
-    transition: width 0.3s ease;
-    -webkit-transition: width 0.3s ease;
-}
-
-.Payment h2:hover::after {
-    width: 100%;
-    left: 0;
-    background: #fff;
-}
-
-.Payment h2:hover{
+.Payment:hover{
     cursor: pointer;
+    background-color: white;
+    color: #003366;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
 }
 
-.BalanceHistory h2, .Payment h2 {
+.BalanceHistory h2{
     margin-bottom: 10px;
     color: #333;
 }
@@ -443,4 +429,53 @@ h4.underlined {
 
 .sendButton{
     background-color: #003366;
+}
+
+.eye-icon{
+    height: 40px;
+}
+
+.balance-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.balance {
+    font-size: 1.5em;
+    margin: 0;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    cursor: pointer;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+}
+
+.eye-icon-hidden {
+    display: none;
+    height: 40px;
+}
+
+.toggle-checkbox:checked + .toggle-label .eye-icon {
+    display: none;
+}
+
+.toggle-checkbox:checked + .toggle-label .eye-icon-hidden {
+    display: inline;
+}
+
+.toggle-checkbox:checked ~ .balance {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.info-title{
+    margin: 20px;
 }

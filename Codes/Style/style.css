@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 body {
     font-family: montserrat;
     margin: 0;
@@ -17,7 +20,7 @@ body {
 }
 .header {
     padding: 15px;
-    background: #6200ea;
+    background: #003366;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -29,7 +32,7 @@ body {
 }
 .footer {
     padding: 10px;
-    background: #6200ea;
+    background: #003366;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -37,17 +40,25 @@ body {
 }
 .balance {
     padding: 20px;
-    border-bottom: 1px solid #ddd;
     text-align: left;
 }
+
 .balance h2 {
     margin: 0;
     font-size: 1.5em;
 }
 .balance p {
-    margin: 5px 0 0;
+    margin: 5px 0 0 px;
     color: #000000;
     font-size: 1.5em;
+}
+
+.eye-icon{
+    height: 49px;
+}
+
+.eye-icon-hidden{
+    height: 49px;
 }
 
 .menu-wrapper {
@@ -61,7 +72,7 @@ body {
     text-align: center;
     width: 33.33%;
     padding: 10px 0; /* Adicionando padding para espaçamento interno */
-    border-bottom: 1px solid #ddd; /* Adicionando borda inferior */
+    border-bottom: 1px solid #fff; /* Adicionando borda inferior */
 }
 .menu div:last-child {
     border-bottom: none; /* Removendo borda inferior do último item */
@@ -84,6 +95,17 @@ body {
     background-color: #ccc; /* Cor de fundo cinza */
     padding: 20px; /* Adicionando algum espaço interno */
     border-bottom: 1px solid #ddd; /* Adicionando uma borda inferior como separador */
+    transition: transform 0.3s ease;
+}
+
+.loan-requests:hover{
+    transition: 0.3s;
+    transform: translateX(100%);
+    cursor: pointer;
+}
+
+.loan-requests h2:hover{
+    cursor: pointer;
 }
 
 h4.underlined {
@@ -92,7 +114,7 @@ h4.underlined {
 
 .purple-line {
     height: 10px; /* Altura da linha roxa */
-    background-color: #6200ea;
+    background-color: #003366;
     color: #fff;; /* Cor roxa */
 }
 .profile-panel {
@@ -101,7 +123,7 @@ h4.underlined {
     left: -300px; /* Inicialmente escondido */
     width: 300px;
     height: 100%;
-    background-color: #6200ea; /* Cor de fundo semelhante à aba principal */
+    background-color: #003366; /* Cor de fundo semelhante à aba principal */
     color: #fff; /* Cor do texto semelhante à aba principal */
     font-family: Arial, sans-serif; /* Fonte semelhante à aba principal */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -125,7 +147,13 @@ h4.underlined {
     height: 45px;
     margin-left: 0px;
     border-radius: 50%;
-    border: 2px solid black;
+    border: 2px solid white; 
+    transition: 0.3s;
+}
+
+.profile-panel img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 /* Estilos para o painel lateral de ajuda */
@@ -135,13 +163,18 @@ h4.underlined {
     right: -300px; /* Inicialmente escondido */
     width: 300px;
     height: 100%;
-    background-color: #6200ea; /* Cor de fundo semelhante à aba principal */
+    background-color: #003366; /* Cor de fundo semelhante à aba principal */
     color: #fff; /* Cor do texto semelhante à aba principal */
     font-family: Arial, sans-serif; /* Fonte semelhante à aba principal */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     transition: right 0.3s ease; /* Adiciona uma transição suave */
     z-index: 999; /* Certifique-se de que o painel esteja acima de outros elementos */
 } 
+
+.help-panel img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
 
 .carousel-container {
     position: relative;
@@ -224,7 +257,7 @@ h4.underlined {
 
 /* Estilo para os botões dentro da lightbox */
 .lightbox-content button {
-    background-color: purple; /* Cor de fundo roxa */
+    background-color: #003366; /* Cor de fundo roxa */
     color: white; /* Cor do texto branca */
     padding: 10px 20px; /* Maior espaçamento interno */
     border: none; /* Remove a borda */
@@ -233,14 +266,18 @@ h4.underlined {
     margin: 0 5px; /* Margem entre os botões */
     font-size: 16px; /* Tamanho da fonte */
     margin: 0 5px; /* Margem entre os botões */
+    transition: 0.3s;
 }
 
 .lightbox-content button:hover {
-    background-color: #6a1b9a; /* Altera a cor de fundo quando hover */
+    background-color: white; /* Altera a cor de fundo quando hover */
+    color: #003366;
+    transition: 0.3s;
 }
 
 .button-container {
     display: flex;
+    color: #003366;
 }
 
 .lightbox-content button {
@@ -252,4 +289,72 @@ h4.underlined {
     background-color: gray; /* Alterar para a cor desejada */
     transition: background-color 0.3s ease;
     border-radius: 50%; /* Apenas se desejar bordas arredondadas */
+}
+
+.balance-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.balance {
+    font-size: 1.5em;
+    margin: 0;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    cursor: pointer;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+}
+
+.eye-icon-hidden {
+    display: none;
+}
+
+.toggle-checkbox:checked + .toggle-label .eye-icon {
+    display: none;
+}
+
+.toggle-checkbox:checked + .toggle-label .eye-icon-hidden {
+    display: inline;
+}
+
+.toggle-checkbox:checked ~ .balance {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.icon-container img{
+    transition: 0.3s;
+}
+
+.icon-container img:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.menu div{
+    transition: 0.3s;
+}
+
+.menu div:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.news{
+    margin: 20px;
+}
+
+.news img{
+    border-radius: 10px;
 }

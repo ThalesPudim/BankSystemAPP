@@ -16,10 +16,7 @@
             <img id="back-icon" src="../images/Back.png" alt="Help" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid white;">
             </div>
         </div>
-        <div class="balance">
-            <h2>Saldo</h2>
-            <p>R$ X.XXX,XX</p>
-        </div>
+        
         <div class="BalanceHistory">
             <h2>Históricos de transferencia</h2>
             <div class="history-window">
@@ -34,9 +31,9 @@
             </div>
         </div>
         
-        <div class="Payment" id="paymentButton">
-            <h2 style="color: #D3D3D3;">Realizar pagamento</h2>
-        </div>
+        <button class="Payment" id="paymentButton">
+            Realizar pagamento
+        </button>
         
         <div class="PaymentScreen" id="paymentScreen">
             <div class="header">
@@ -44,6 +41,19 @@
                     <img id="closeButton" src="../images/Back.png" alt="User" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid white;">
                 </div>
             </div>
+
+            <div class="balance">
+                <h2>Saldo</h2>
+                <div class="balance-container">
+                    <input type="checkbox" id="toggle-balance" class="toggle-checkbox">
+                    <label for="toggle-balance" class="toggle-label">
+                        <span class="eye-icon"><img src="../images/saldo-visivel.png" alt="" style="max-width: 50px;"></span>
+                        <span class="eye-icon-hidden"><img src="../images/saldo-nao-visivel.png" alt="" style="max-width: 50px;"></span>
+                    </label>
+                    <p class="balance" id="balance">R$ 1.000,00</p>
+                </div>
+            </div>
+            
             <h2 class="info-title">Payment information</h2>
             <div class="payment-form">
                 <div class="input-group">
