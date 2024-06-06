@@ -78,8 +78,9 @@ $conn->close();
                 
                         // Define o sinal baseado no tipo de transação
                         $sign = $transaction_type == 'send' ? '-' : '+';
+                        $class = $sign == '-' ? "Receive" : "Send";  //Explicar essa parada pro Roviero
                 
-                        echo "<p>$transaction_date : $sign R$ " . number_format($amount, 2, ',', '.') . " - $email</p>";
+                        echo "<p class='$class' >$transaction_date : $sign R$ " . number_format($amount, 2, ',', '.') . " - $email</p>";
                     }
                 } else {
                     echo "<p>Sem transações registradas.</p>";
