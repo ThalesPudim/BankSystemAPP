@@ -10,6 +10,31 @@ include '../DbConnection/auth.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco - Protótipo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function updateBalance() {
+                $.ajax({
+                    url: '../DBConnection/get_balance.php',
+                    method: 'GET',
+                    success: function(response) {
+                        if (response.balance !== undefined) {
+                            $('#balance').text('R$: ' + response.balance);
+                        }
+                    },
+                    error: function() {
+                        console.error('Erro ao buscar o saldo.');
+                    }
+                });
+            }
+
+            // Atualiza o saldo a cada 5 segundos
+            setInterval(updateBalance, 5000);
+
+            // Atualiza o saldo ao carregar a página
+            updateBalance();
+        });
+    </script>
     <link rel="stylesheet" type="text/css" href="../Style/style.css">
 </head>
 <body>
@@ -100,6 +125,31 @@ include '../DbConnection/auth.php';
     </div>
 </div>
     <!-- Referenciando Script-->
+    <script>
+            $(document).ready(function() {
+            function updateBalance() {
+                $.ajax({
+                    url: '../DBConnection/login.php',
+                    method: 'GET',
+                    success: function(response) {
+                        if (response.balance !== undefined) {
+                            $('#balance').text('R$: ' + response.balance);
+                        }
+                    },
+                    error: function() {
+                        console.error('Erro ao buscar o saldo.');
+                    }
+                });
+            }
+
+            // Atualiza o saldo a cada 5 segundos
+            setInterval(updateBalance, 5000);
+
+            // Atualiza o saldo ao carregar a página
+            updateBalance();
+        });
+
+    </script>
     <script src="../Script/Script.js"></script>
 </body>
 </html>
