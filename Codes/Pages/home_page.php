@@ -41,10 +41,10 @@ include '../DbConnection/auth.php';
     <div class="container">
         <div class="header">
             <div class="icon-container">
-                <img src="../images/Sample_User_Icon.png" alt="User" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid black;">
+                <img src="../images/user_icon.png" alt="User" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 3px solid white;">
             </div>
             <div class="icon-container">
-            <img src="../images/QuestionMark.png" alt="Help" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid black;">
+            <img src="../images/QuestionMark.png" alt="Help" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 3px solid white;">
             </div>
         </div>
         <div class="balance">
@@ -61,11 +61,11 @@ include '../DbConnection/auth.php';
         <div class="menu-wrapper">
             <div class="menu" id="menu">
                 <div>
-                    <img id="payment-icon" src="../images/money-icon.png" alt="Payment" >
+                <img class="payment-icon"  id="payment-icon" src="../images/money-icon.png" alt="Payment" >
                     <p>Management</p>
                 </div>
                 <div>
-                    <img id="codebar-icon" src="../images/code-bar.png" alt="CodeBar" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid black;">
+                <img class="code-bar"  id="codebar-icon" src="../images/code-bar.png" alt="CodeBar">
                     <p>Ticket</p>
                 </div>
                 <div>
@@ -98,13 +98,15 @@ include '../DbConnection/auth.php';
     <div class="purple-line"></div> <!-- Linha Roxa no final da pagina-->
     <div class="profile-panel" id="profilePanel">
         <!-- Conteúdo do painel lateral (informações do perfil) -->
-        <img src="../images/Sample_User_Icon.png" alt="User">
-        <img src="../images/Logout.png" alt="Logout" id="logoutButton">
+        <img src="../images/user_icon.png" alt="User">
         <h2>Informações do Perfil</h2>
         <p><strong>Nome:</strong> <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?></p>
         <p><strong>Data de Nascimento:</strong> <?php echo date('d/m/Y', strtotime($_SESSION['date_of_birth'])); ?></p>
         <p><strong>Email:</strong> <?php echo $_SESSION['email']; ?></p>
         <p><strong>Tipo de Conta:</strong> <?php echo $account_type; ?></p>
+        <div class="botao-sair" id="logoutButton">
+            <h2>Sair do aplicativo</h2><img src="../images/Logout.png" alt="">
+        </div>
     </div>
 
     <!-- Painel lateral para exibir informações de ajuda -->

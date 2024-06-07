@@ -358,3 +358,25 @@ h4.underlined {
 .news img{
     border-radius: 10px;
 }
+
+.botao-sair{
+    display: flex;
+    background-color: #001144;
+    border-radius: 100px;
+    padding: 10px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-sair img{
+    border: 0px;
+}
+
+.code-bar{
+    width: 45px; 
+    height: 45px; 
+    margin-left: 0px; 
+    border-radius: 50%; 
+    background-color: #ccc;
+}
