@@ -41,10 +41,10 @@ include '../DbConnection/auth.php';
     <div class="container">
         <div class="header">
             <div class="icon-container">
-                <img src="../images/user_icon.png" alt="User" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 3px solid white;">
+                <img src="../images/user_icon.png" alt="User" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid white;">
             </div>
             <div class="icon-container">
-            <img src="../images/QuestionMark.png" alt="Help" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 3px solid white;">
+            <img src="../images/QuestionMark.png" alt="Help" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid;">
             </div>
         </div>
         <div class="balance">
@@ -127,31 +127,6 @@ include '../DbConnection/auth.php';
     </div>
 </div>
     <!-- Referenciando Script-->
-    <script>
-            $(document).ready(function() {
-            function updateBalance() {
-                $.ajax({
-                    url: '../DBConnection/login.php',
-                    method: 'GET',
-                    success: function(response) {
-                        if (response.balance !== undefined) {
-                            $('#balance').text('R$: ' + response.balance);
-                        }
-                    },
-                    error: function() {
-                        console.error('Erro ao buscar o saldo.');
-                    }
-                });
-            }
-
-            // Atualiza o saldo a cada 5 segundos
-            setInterval(updateBalance, 5000);
-
-            // Atualiza o saldo ao carregar a página
-            updateBalance();
-        });
-
-    </script>
     <script src="../Script/Script.js"></script>
 </body>
 </html>

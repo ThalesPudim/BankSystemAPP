@@ -159,8 +159,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Adiciona um evento de clique ao botão de deslogar
     logoutButton.addEventListener('click', function() {
-        // Imprime uma mensagem no console quando o botão de deslogar for clicado
-        console.log("Botão de deslogar clicado");
         // Torna a lightbox visível
         lightbox.style.display = 'block';
 

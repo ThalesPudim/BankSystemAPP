@@ -125,7 +125,6 @@ $conn->close();
                 </form>
             </div>
 
-
             <div class="loan-requests">
                 <h2>Report</h2>
                 <div class="carousel-container alert">
@@ -141,8 +140,13 @@ $conn->close();
                         <img src="../images/sucess.png" alt="Success" style="width: 50px; height: 50px;">
                         <p>Pagamento realizado com sucesso!</p>
                     </div>
+                    <div id="errorMessage" class="error-message">
+                        <img src="../images/failure.png" alt="Error" style="width: 50px; height: 50px;">
+                        <p>Erro ao realizar o pagamento.</p>
+                    </div>
                 </div>
             </div>
+
             <div class="purple-line"></div> 
         </div>
     </div>
