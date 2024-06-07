@@ -26,13 +26,15 @@ if ($result->num_rows > 0) {
     $_SESSION['cpf'] = $user['CPF'];
     $_SESSION['gender'] = $user['Gender'];
     $_SESSION['balance'] = $user['Balance'];
-    $_SESSION['account_type_id'] = $user['AccountTypeID']; // Certifique-se de que esta linha está presente e correta
+    $_SESSION['account_type_id'] = $user['AccountTypeID'];
 
     echo "success";
 } else {
     // E-mail ou senha incorretos
     echo "error";
 }
+
+
 
 $conn->close();
 ?>
