@@ -127,31 +127,6 @@ include '../DbConnection/auth.php';
     </div>
 </div>
     <!-- Referenciando Script-->
-    <script>
-            $(document).ready(function() {
-            function updateBalance() {
-                $.ajax({
-                    url: '../DBConnection/login.php',
-                    method: 'GET',
-                    success: function(response) {
-                        if (response.balance !== undefined) {
-                            $('#balance').text('R$: ' + response.balance);
-                        }
-                    },
-                    error: function() {
-                        console.error('Erro ao buscar o saldo.');
-                    }
-                });
-            }
-
-            // Atualiza o saldo a cada 5 segundos
-            setInterval(updateBalance, 5000);
-
-            // Atualiza o saldo ao carregar a página
-            updateBalance();
-        });
-
-    </script>
     <script src="../Script/Script.js"></script>
 </body>
 </html>

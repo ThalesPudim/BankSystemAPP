@@ -417,6 +417,17 @@ h4.underlined {
     margin-bottom: 10px;
 }
 
+.error-message {
+    display: none;
+    text-align: center;
+    color: rgb(255, 0, 0);
+}
+
+.error-message img {
+    margin-bottom: 10px;
+}
+
+
 .icon-container img{
     transition: 0.3s;
 }
