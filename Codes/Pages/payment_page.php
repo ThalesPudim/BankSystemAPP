@@ -58,10 +58,10 @@ $conn->close();
     <div class="container">
         <div class="header">
             <div class="icon-container">
-                <img src="../images/user_icon.png" alt="User" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid white;">
+            <img id="back-icon" src="../images/Back.png" alt="Help" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid white;">
             </div>
             <div class="icon-container">
-            <img id="back-icon" src="../images/Back.png" alt="Help" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid white;">
+                <img src="../images/user_icon.png" alt="User" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid white;">
             </div>
         </div>
         
