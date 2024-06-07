@@ -41,10 +41,10 @@ include '../DbConnection/auth.php';
     <div class="container">
         <div class="header">
             <div class="icon-container">
-                <img src="../images/Sample_User_Icon.png" alt="User" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid black;">
+                <img src="../images/user_icon.png" alt="User" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid white;">
             </div>
             <div class="icon-container">
-            <img src="../images/QuestionMark.png" alt="Help" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid black;">
+            <img src="../images/QuestionMark.png" alt="Help" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid;">
             </div>
         </div>
         <div class="balance">
