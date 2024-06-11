@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: montserrat;
+}
+
+header{
+  width: 100%;
+  background-color: #003366;
+  color: white;
+}
+
+.voltar{
+  background-color: #003366;
+  border-radius: 50%;
+  border: solid white;
+  margin: 15px;
+}
+
+.voltar:hover{
+  cursor: pointer;
+}
+
+.voltar img{
+  max-width: 45px;
+}
+
+.titulo{
+  text-align: center;
+  margin: 20px;
+  padding: 50px;
+}
+
+.opcoes img{
+  max-width: 45px;
+}
+
+.objetivos{
+  display: flex;
+  border-bottom: 1px solid #003366;
+  align-items: center;
+  justify-content: center;
+}
+
+.objetivos img{
+  margin: 20px;
+}
+
+.objetivos h3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.continuar{
+  background-color: #003366;
+}
+
+.continuar button{
+  background-color: #003366;
+  border-radius: 50%;
+  border: solid white;
+  margin: 15px;
+}
+
+.continuar button:hover{
+  cursor: pointer;
+}
+
+.continuar img{
+  max-width: 45px;
+}
+
+.objetivos:hover{
+  cursor: pointer;
+}
+
