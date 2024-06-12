@@ -15,10 +15,15 @@ include '../DbConnection/auth.php';
 <body>
     <header>
         <div class="icon-container">
-            <img id="back-icon" src="../images/Back.png" alt="Help" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid white;">
+            <img id="back-icon" src="../images/Back.png" alt="Help">
         </div>
 
     </header>
+
+    <div class="titulo">
+        <h2>You will use your Loan for?</h2>
+    </div>
+
     <div class="opcoes">
         <div class="objetivos" id="opcao1">
             <img src="../images/bills.png" alt="">

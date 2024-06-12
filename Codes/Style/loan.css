@@ -3,6 +3,7 @@
 * {
   margin: 0px;
   box-sizing: border-box;
+  
 }
 
 body {
@@ -19,6 +20,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.icon-container img{
+  width: 45px; 
+  height: 45px; 
+  margin-left: 0px; 
+  border-radius: 50%; 
+  border: 2px solid white;
+  position: sticky;
 }
 
 .voltar {
@@ -38,8 +48,9 @@ header {
 
 .titulo {
   text-align: center;
-  margin: 20px;
+  margin-bottom: 20px;
   padding: 50px;
+  height: 80px;
 }
 
 .opcoes {
@@ -79,7 +90,7 @@ header {
 
 .continuar {
   background-color: #003366;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   width: 100%;
   display: flex;
