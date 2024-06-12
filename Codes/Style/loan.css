@@ -1,82 +1,160 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
+* {
   margin: 0px;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: montserrat;
 }
 
-header{
+header {
   width: 100%;
   background-color: #003366;
   color: white;
+  padding: 15px;
+  background: #003366;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.voltar{
+.voltar {
   background-color: #003366;
   border-radius: 50%;
   border: solid white;
   margin: 15px;
 }
 
-.voltar:hover{
+.voltar:hover {
   cursor: pointer;
-}
+} 
 
-.voltar img{
+.voltar img {
   max-width: 45px;
 }
 
-.titulo{
+.titulo {
   text-align: center;
   margin: 20px;
   padding: 50px;
 }
 
-.opcoes img{
+.opcoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.opcoes img {
   max-width: 45px;
 }
 
-.objetivos{
+.objetivos {
   display: flex;
   border-bottom: 1px solid #003366;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 20px; 
+  width: 80%; 
+  max-width: 600px; 
+  margin: 10px 0; 
+  background-color: #f0f0f0; 
+  border-radius: 10px; 
 }
 
-.objetivos img{
-  margin: 20px;
-}
-
-.objetivos h3{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.continuar{
-  background-color: #003366;
-}
-
-.continuar button{
-  background-color: #003366;
-  border-radius: 50%;
-  border: solid white;
-  margin: 15px;
-}
-
-.continuar button:hover{
-  cursor: pointer;
-}
-
-.continuar img{
-  max-width: 45px;
+.objetivos img {
+  margin-right: 20px; 
 }
 
 .objetivos:hover{
   cursor: pointer;
 }
 
+.opcoes .objetivos.selecionado {
+  background-color: #b6bed8 !important;
+}
+
+.continuar {
+  background-color: #003366;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.continuar button {
+  background-color: #003366;
+  border-radius: 50%;
+  border: solid white;
+  margin: 0; /* Remover margens ao redor do botão */
+  padding: 10px; /* Adicionar padding para equilibrar a borda */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 5px -5px #003366, 5px 0 5px -5px #003366, -5px 0 5px -5px #003366; /* Borda azul nos lados e parte inferior */
+}
+
+.continuar button:hover {
+  cursor: pointer;
+}
+
+.continuar img {
+  max-width: 45px;
+}
+
+.objetivos:hover {
+  cursor: pointer;
+}
+
+#form-container {
+  background-color: #f0f0f0;
+  margin: -10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-left: 1px solid #003366;
+  border-right: 1px solid #003366;
+  border-bottom: 1px solid #003366;
+  border-top: 1px solid transparent;
+  border-radius: 10px;
+}
+
+#form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+#form-container form label,
+#form-container form input {
+  margin-bottom: 10px;
+}
+
+#form-container form button {
+  align-self: center;
+  padding: 10px 20px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-group input {
+  width: calc(90% - 0px); /* 80% da largura total menos 40 pixels para considerar os espaços de 20px em cada borda */
+  padding: 12px; /* Adicionando um padding de 12px em todos os lados */
+  border: 1px solid rgba(0, 0, 0, 0.4); /* Cor da borda com transparência */
+  border-radius: 10px;
+  margin: 0 20px; /* Adiciona um espaço de 20 pixels em ambos os lados */
+  margin-bottom: 15px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.input-group:focus-within input {
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+}
