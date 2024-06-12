@@ -192,3 +192,14 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = '../DBConnection/logout.php';
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const loanRequestsDiv = document.querySelector('.loan-requests');
+
+    loanRequestsDiv.addEventListener('click', function() {
+        // Redirecionar após o tempo da animação (1s)
+        setTimeout(function() {
+            window.location.href = 'loan.php';
+        }, 100); // Tempo em milissegundos
+    });
+});

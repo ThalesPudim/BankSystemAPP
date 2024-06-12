@@ -75,10 +75,12 @@ include '../DbConnection/auth.php';
                 <!-- Adicione mais item para deixar bonito -->
             </div>
         </div>
+        
         <div class="loan-requests">
             <h2>Loan Requests ></h2>
             <h4 class="underlined">Information, suggestions, verification</h4>
         </div>
+
         <div class="news">
             <h2>News</h2>
             <div class="carousel-container"> <!-- carrossel está aqui -->
@@ -105,7 +107,7 @@ include '../DbConnection/auth.php';
         <p><strong>Email:</strong> <?php echo $_SESSION['email']; ?></p>
         <p><strong>Tipo de Conta:</strong> <?php echo $account_type; ?></p>
         <div class="botao-sair" id="logoutButton">
-            <h2>Sair do aplicativo</h2><img src="../images/Logout.png" alt="">
+            <h2>Sair do aplicativo</h2>
         </div>
     </div>
 
