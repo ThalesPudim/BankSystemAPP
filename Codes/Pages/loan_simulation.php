@@ -8,14 +8,14 @@ include '../DbConnection/auth.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Style/loan.css">
+    <link rel="stylesheet" href="../Style/loan_simulation.css">
     <title>Loan Simulation</title>
 
 </head>
 <body>
     <header>
         <div class="icon-container">
-            <img id="back-icon" src="../images/Back.png" alt="Back" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid white;">
+            <img id="back-icon" src="../images/Back.png" alt="Back">
         </div>
     </header>
     <div class="opcoes">
