@@ -87,6 +87,8 @@ body {
     background-color: #f9f9f9; /* Cor de fundo cinza */
     padding: 20px; /* Adicionando algum espaço interno */
     border-bottom: 1px solid #ddd; /* Adicionando uma borda inferior como separador */
+    position: absolute;
+    bottom: 0px;
 }
 
 .news {
@@ -252,24 +254,24 @@ h4.underlined {
     border-radius: 50%; /* Apenas se desejar bordas arredondadas */
 }
 
-
-
-
 .BalanceHistory {
     padding: 20px;
-    border-bottom: 1px solid #ddd;
     text-align: left;
     background-color: #f9f9f9;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
+.BalanceHistory h2{
+    text-align: center;
+}
+
 .Payment{
+    width: 90%;
     background-color: #003366;
     color: white;
-    margin: 25px;
+    margin: 22px;
     height: 90px;
     border: none;
     border-radius: 10px;
@@ -278,6 +280,8 @@ h4.underlined {
     font-family: montserrat;
     transition: 0.3s;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 10px;
 }
 
 .Payment:hover{
@@ -303,6 +307,7 @@ h4.underlined {
     padding: 10px; /* Adiciona um espaçamento interno */
     border-radius: 10px; /* Adiciona bordas arredondadas */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+    height: 65vh;
 }
 
 .history-window p {
@@ -329,6 +334,12 @@ h4.underlined {
     z-index: 1000;
     transition: transform 0.6s ease;
     transform: translateY(100%);
+}
+
+.PaymentScreen .header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .payment-visible {
@@ -494,4 +505,9 @@ h4.underlined {
 
 .Send{
     background-color: green;
+}
+
+.Payment-information{
+    text-align: center;
+    height: 50vh;
 }

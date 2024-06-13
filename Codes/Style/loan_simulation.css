@@ -100,6 +100,7 @@ input:focus {
   width: 400px;
   font-size: larger;
   box-shadow: 10px 14px 18px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
 }
 
 .enviar:hover {

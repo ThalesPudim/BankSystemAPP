@@ -60,9 +60,6 @@ $conn->close();
             <div class="icon-container">
             <img id="back-icon" src="../images/Back.png" alt="Help" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid white;">
             </div>
-            <div class="icon-container">
-                <img src="../images/user_icon.png" alt="User" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid white;">
-            </div>
         </div>
         
         <div class="BalanceHistory">
@@ -99,33 +96,30 @@ $conn->close();
         <div class="PaymentScreen" id="paymentScreen">
             <div class="header">
                 <div class="icon-container">
-                    <img id="closeButton" src="../images/Back.png" alt="User" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid white;">
+                    <img id="closeButton" src="../images/Arrow-down.png" alt="User" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid white;">
                 </div>
             </div>
 
             <div class="balance" style="background-color: #f9f9f9;">
                 <h2>Saldo</h2>
                 <div class="balance-container">
-                    <input type="checkbox" id="toggle-balance" class="toggle-checkbox">
-                    <label for="toggle-balance" class="toggle-label">
-                        <span class="eye-icon"><img src="../images/saldo-visivel.png" alt="" style="max-width: 50px;"></span>
-                        <span class="eye-icon-hidden"><img src="../images/saldo-nao-visivel.png" alt="" style="max-width: 50px;"></span>
-                    </label>
                     <p>R$ <?php echo number_format($_SESSION['balance'], 2, ',', '.'); ?></p>
                 </div>
             </div>
             
-            <h2 class="info-title">Payment information</h2>
-            <div class="payment-form">
-                <form id="transferForm" method="post" action="../DBConnection/transfer.php">
-                    <div class="input-group">
-                        <input type="email" name="email" id="emailInput" placeholder="Email do destinatário" required>
-                    </div>
-                    <div class="input-group">
-                        <input type="number" name="amount" id="amountInput" placeholder="Quantia a transferir" required min="0.01" step="0.01">
-                    </div>
-                        <button type="submit" id="sendButton" style="background-color: #003366; color: white;">Enviar</button>
-                </form>
+            <div class="Payment-information">
+                <h2 class="info-title">Payment information</h2>
+                <div class="payment-form">
+                    <form id="transferForm" method="post" action="../DBConnection/transfer.php">
+                        <div class="input-group">
+                            <input type="email" name="email" id="emailInput" placeholder="Email do destinatário" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="number" name="amount" id="amountInput" placeholder="Quantia a transferir" required min="0.01" step="0.01">
+                        </div>
+                            <button type="submit" id="sendButton" style="background-color: #003366; color: white;">Enviar</button>
+                    </form>
+                </div>
             </div>
 
             <div class="loan-requests">
