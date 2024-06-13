@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loanRequestsDiv.addEventListener('click', function() {
         // Redirecionar após o tempo da animação (1s)
         setTimeout(function() {
-            window.location.href = 'loan.php';
+            window.location.href = 'loan_page.php';
         }, 100); // Tempo em milissegundos
     });
 });
