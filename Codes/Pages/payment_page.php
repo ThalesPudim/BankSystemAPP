@@ -105,7 +105,7 @@ $conn->close();
                         
                         $color = $class == 'Send' ? "color: red;" : "color: green;"; // Ajustado para estilo CSS válido
 
-                    echo "<p class='$class' style='$color'>$transaction_date : $sign R$ " . number_format($amount, 2, ',', '.') . " - $email</p>";
+                    echo "<p class='$class' style='color: black';>$transaction_date : ". "<span style='$color' > $sign R$ " . number_format($amount, 2, ',', '.') ."</span>" ." - $email</p>";
 
                     }
                 } else {

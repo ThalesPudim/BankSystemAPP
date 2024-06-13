@@ -12,10 +12,9 @@ $name = $_POST['name'];
 // Remove pontos e traços do CPF
 $cpf = preg_replace('/[.\-]/', '', $cpf);
 
-// Remove o "R$" e converte a quantia para um número de ponto flutuante
-$amount = str_replace(['R$', '.'], '', $amount);
-$amount = str_replace(',', '.', $amount);
-$amount = floatval($amount);
+// Remove o "R$" e formata a quantia para um número inteiro
+$amount = str_replace(['R$',','], ['', '', ''], $amount);
+$amount = floatval(str_replace(',', '.', $amount)); 
 
 // Obtém o ID do usuário logado
 // Inicia a sessão se ainda não estiver ativa

@@ -57,4 +57,4 @@ include '../DbConnection/auth.php';
         </div>
     <script src="../Script/LoanSimulation.js"></script>
 </body>
-</html>
+</html> 

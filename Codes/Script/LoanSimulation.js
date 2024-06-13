@@ -91,13 +91,22 @@ function onlyNumbersAndDots(event) {
 
 // Função para formatar o campo de valor monetário
 function formatCurrency(input) {
+   // Remove todos os caracteres não numéricos
     let value = input.value.replace(/\D/g, '');
-    value = (value / 100).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+
+   // Transforma em número e divide por 100 para obter o valor decimal
+    value = parseFloat(value / 100).toFixed(2);
+
+   // Substitui o ponto por vírgula (para separador decimal correto)
+    value = value.replace('.', ',');
+    value = value.replace(',', '.');
+   // Adiciona o símbolo de moeda e define o valor no input
     input.value = 'R$ ' + value;
+    console.log(value);
 }
 
 document.getElementById('sendButton').addEventListener('click', function(event) {
-    event.preventDefault(); // Previne o comportamento padrão do botão (submit do formulário)
+    event.preventDefault();
 
     // Obter valores dos campos de entrada
     var email = document.getElementById('emailInput').value;
