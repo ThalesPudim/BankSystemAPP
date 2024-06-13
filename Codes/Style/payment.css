@@ -41,7 +41,7 @@ body {
     padding: 20px;
     border-bottom: 1px solid #ddd;
     text-align: left;
-    background-color: #D3D3D3;
+    background-color: #f9f9f9;
 }
 .balance h2 {
     margin: 0;
@@ -79,12 +79,12 @@ body {
 .menu div p {
     margin: 5px 0 0; /* Alterando margem do parágrafo */
     font-size: 0.9em;
-    color: #666;
+    color: #D3D3D3;
 }
 
 .loan-requests {
     flex-grow: 1; 
-    background-color: #ccc; /* Cor de fundo cinza */
+    background-color: #f9f9f9; /* Cor de fundo cinza */
     padding: 20px; /* Adicionando algum espaço interno */
     border-bottom: 1px solid #ddd; /* Adicionando uma borda inferior como separador */
 }
@@ -247,7 +247,7 @@ h4.underlined {
 }
 
 .change-color {
-    background-color: gray; /* Alterar para a cor desejada */
+    background-color: #D3D3D3; /* Alterar para a cor desejada */
     transition: background-color 0.3s ease;
     border-radius: 50%; /* Apenas se desejar bordas arredondadas */
 }
@@ -456,6 +456,7 @@ h4.underlined {
     font-size: 1.5em;
     margin: 0;
     transition: visibility 0.3s ease, opacity 0.3s ease;
+    background-color: #D3D3D3;
 }
 
 .toggle-checkbox {
@@ -489,4 +490,8 @@ h4.underlined {
 
 .info-title{
     margin: 20px;
+}
+
+.Send{
+    background-color: green;
 }

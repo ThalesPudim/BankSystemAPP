@@ -23,9 +23,9 @@ include '../DbConnection/auth.php';
             <!-- O conteúdo selecionado na pagina anterior será inserido aqui, não mexer -->
     </div>
     <div id="form-container">
-        <form action="../DBConnection/loanverification.php" method="post">
+        <form action="../DBConnection/loanverification.php" method="post" class="dados">
             <div class="input-group">
-                <input type="email" name="email" id="emailInput" placeholder="Email" required>
+                <input type="email" name="email" id="emailInput" placeholder="E-mail" required>
             </div>
             <div class="input-group">
                 <input type="text" name="amount" id="amountInput" placeholder="Quantia a transferir (R$ 00,00)" required onkeypress="return onlyNumbersAndDots(event)" oninput="formatCurrency(this)">
@@ -36,8 +36,10 @@ include '../DbConnection/auth.php';
             <div class="input-group">
                 <input type="text" name="name" id="nameInput" placeholder="Nome Completo" required>
             </div>
-            <button type="submit" id="sendButton" style="background-color: #003366; color: white;">Enviar</button>
         </form>
+
+        <button type="submit" id="sendButton" class="enviar">Enviar</button>
+
     </div>
     <div class="continuar">
     </div>
