@@ -10,7 +10,6 @@ include '../DbConnection/auth.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Style/loan_simulation.css">
     <title>Loan Simulation</title>
-
 </head>
 <body>
     <header>
@@ -21,28 +20,41 @@ include '../DbConnection/auth.php';
     <div class="opcoes">
         <div id="Objetivo" class="objetivos">
             <!-- O conteúdo selecionado na pagina anterior será inserido aqui, não mexer -->
-    </div>
-    <div id="form-container">
-        <form action="../DBConnection/loanverification.php" method="post" class="dados">
-            <div class="input-group">
-                <input type="email" name="email" id="emailInput" placeholder="E-mail" required>
-            </div>
-            <div class="input-group">
-                <input type="text" name="amount" id="amountInput" placeholder="Quantia a transferir (R$ 00,00)" required onkeypress="return onlyNumbersAndDots(event)" oninput="formatCurrency(this)">
-            </div>
-            <div class="input-group">
-                <input type="text" name="cpf" id="cpfInput" placeholder="CPF (Apenas números)" required maxlength="14" oninput="formatarCPF(this)">
-            </div>
-            <div class="input-group">
-                <input type="text" name="name" id="nameInput" placeholder="Nome Completo" required>
-            </div>
-        </form>
+        </div>
+        <div id="form-container">
+            <form id="loanRequestForm" method="post" class="dados">
+                <div class="input-group"> 
+                    <input type="email" name="email" id="emailInput" placeholder="E-mail" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="amount" id="amountInput" placeholder="Quantia a transferir (R$ 00,00)" required onkeypress="return onlyNumbersAndDots(event)" oninput="formatCurrency(this)">
+                </div>
+                <div class="input-group">
+                    <input type="text" name="cpf" id="cpfInput" placeholder="CPF (Apenas números)" required maxlength="14" oninput="formatarCPF(this)">
+                </div>
+                <div class="input-group">
+                    <input type="text" name="name" id="nameInput" placeholder="Nome Completo" required>
+                </div>
+            </form>
+            <button type="submit" id="sendButton" class="enviar">Enviar</button>
+        </div>
 
-        <button type="submit" id="sendButton" class="enviar">Enviar</button>
 
+        <div class="continuar"></div>
     </div>
-    <div class="continuar">
-    </div>
+    <div id="paymentLightbox" class="lightbox">
+            <div class="lightbox-content">
+                <div id="loadingAnimation" class="loading-animation"></div>
+                <div id="successMessage" class="success-message">
+                    <img src="../images/sucess.png" alt="Success" style="width: 50px; height: 50px;">
+                    <p>Geração de Empréstimo bem sucedida!</p>
+                </div>
+                <div id="errorMessage" class="error-message">
+                    <img src="../images/failure.png" alt="Error" style="width: 50px; height: 50px;">
+                    <p>Erro ao realizar o pagamento.</p>
+                </div>
+            </div>
+        </div>
     <script src="../Script/LoanSimulation.js"></script>
 </body>
 </html>

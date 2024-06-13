@@ -96,3 +96,72 @@ function formatCurrency(input) {
     input.value = 'R$ ' + value;
 }
 
+document.getElementById('sendButton').addEventListener('click', function(event) {
+    event.preventDefault(); // Previne o comportamento padrão do botão (submit do formulário)
+
+    // Obter valores dos campos de entrada
+    var email = document.getElementById('emailInput').value;
+    var amount = document.getElementById('amountInput').value;
+    var cpf = document.getElementById('cpfInput').value;
+    var name = document.getElementById('nameInput').value;
+
+    // Exibir a lightbox de loading
+    var lightbox = document.getElementById('paymentLightbox');
+    var loadingAnimation = document.getElementById('loadingAnimation');
+    var successMessage = document.getElementById('successMessage');
+    var errorMessage = document.getElementById('errorMessage');
+
+    lightbox.style.display = 'flex';
+    loadingAnimation.style.display = 'block';
+    successMessage.style.display = 'none';
+    errorMessage.style.display = 'none';
+
+    // Enviar os dados via AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '../DBConnection/loanverification.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function() {
+        // Simular um tempo de espera de 2 segundos
+        setTimeout(function() {
+            loadingAnimation.style.display = 'none';
+
+            if (xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+
+                if (response.status === 'success') {
+                    successMessage.style.display = 'block';
+
+                    setTimeout(function() {
+                        lightbox.style.display = 'none';
+                        window.location.href = 'loan_page.php'; // Redirecionar para a página de empréstimo
+                    }, 2000); // Fechar a lightbox após 2 segundos
+                } else {
+                    errorMessage.querySelector('p').innerText = response.message;
+                    errorMessage.style.display = 'block';
+
+                    // Fechar a lightbox após exibir o erro
+                    setTimeout(function() {
+                        lightbox.style.display = 'none';
+                    }, 2000); // Fechar a lightbox após 4 segundos (ajuste o tempo conforme necessário)
+                }
+            } else {
+                errorMessage.querySelector('p').innerText = 'Erro ao processar a requisição';
+                errorMessage.style.display = 'block';
+
+                // Fechar a lightbox após exibir o erro
+                setTimeout(function() {
+                    lightbox.style.display = 'none';
+                }, 2000); // Fechar a lightbox após 4 segundos (ajuste o tempo conforme necessário)
+            }
+        }, 2000); // Simula 2 segundos de tempo de processamento
+    };
+
+    // Montar os dados a serem enviados
+    var formData =  'email=' + encodeURIComponent(email) +
+                    '&amount=' + encodeURIComponent(amount) +
+                    '&cpf=' + encodeURIComponent(cpf) +
+                    '&name=' + encodeURIComponent(name);
+
+    xhr.send(formData);
+});

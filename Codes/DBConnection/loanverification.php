@@ -15,7 +15,7 @@ $cpf = preg_replace('/[.\-]/', '', $cpf);
 // Remove o "R$" e converte a quantia para um número de ponto flutuante
 $amount = str_replace(['R$', '.'], '', $amount);
 $amount = str_replace(',', '.', $amount);
-$amount = floatval(str_replace(['R$', '.', ','], ['', '', '.'], $amount));
+$amount = floatval($amount);
 
 // Obtém o ID do usuário logado
 // Inicia a sessão se ainda não estiver ativa
@@ -33,7 +33,11 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows == 0) {
-    echo "Email não corresponde à conta logada.";
+    $response = array(
+        'status' => 'error',
+        'message' => 'Email não corresponde à conta logada.'
+    );
+    echo json_encode($response);
     exit;
 }
 
@@ -41,20 +45,32 @@ $user = $result->fetch_assoc();
 
 // Verifica se o CPF fornecido condiz com o email
 if ($user['CPF'] !== $cpf) {
-    echo "CPF não corresponde ao email fornecido.";
+    $response = array(
+        'status' => 'error',
+        'message' => 'CPF não corresponde ao email fornecido.'
+    );
+    echo json_encode($response);
     exit;
 }
 
 // Verifica se o saldo do usuário é maior que 500
 if ($user['Balance'] <= 500) {
-    echo "Saldo insuficiente. O saldo deve ser maior que 500.";
+    $response = array(
+        'status' => 'error',
+        'message' => 'Saldo insuficiente. O saldo deve ser maior que 500.'
+    );
+    echo json_encode($response);
     exit;
 }
 
 // Verifica se o nome fornecido corresponde ao nome na tabela
 $fullName = $user['FirstName'] . ' ' . $user['LastName'];
 if ($fullName !== $name) {
-    echo "Nome não corresponde ao nome na conta.";
+    $response = array(
+        'status' => 'error',
+        'message' => 'Nome não corresponde ao nome na conta.'
+    );
+    echo json_encode($response);
     exit;
 }
 
@@ -67,7 +83,11 @@ $result = $stmt->get_result();
 $count = $result->fetch_assoc()['transaction_count'];
 
 if ($count < 5) {
-    echo "Por favor, movimente mais sua conta bancária.";
+    $response = array(
+        'status' => 'error',
+        'message' => 'Por favor, movimente mais sua conta bancária.'
+    );
+    echo json_encode($response);
     exit;
 }
 
@@ -79,20 +99,32 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    echo "Você já possui um empréstimo pendente";
+    $response = array(
+        'status' => 'error',
+        'message' => 'Você já possui um empréstimo pendente ou aprovado.'
+    );
+    echo json_encode($response);
     exit;
 }
 
 // Se todas as validações passarem, prossegue com a solicitação de empréstimo
-$query = "INSERT INTO LoanRequests (UserID, Amount, RequestDate, RequestStatus) VALUES (?, ?, NOW(), 'Pendente')";
+$query = "INSERT INTO LoanRequests (UserID, Amount, RequestDate, RequestStatus, WithdrawAvailable) VALUES (?, ?, NOW(), 'Pendente', FALSE)";
 $stmt = $conn->prepare($query);
 $stmt->bind_param('id', $userID, $amount);
 $stmt->execute();
 
 if ($stmt->affected_rows > 0) {
-    echo "Solicitação de empréstimo enviada com sucesso.";
+    $response = array(
+        'status' => 'success',
+        'message' => 'Solicitação de empréstimo enviada com sucesso.'
+    );
+    echo json_encode($response);
 } else {
-    echo "Erro ao enviar a solicitação de empréstimo.";
+    $response = array(
+        'status' => 'error',
+        'message' => 'Erro ao enviar a solicitação de empréstimo.'
+    );
+    echo json_encode($response);
 }
 
 $stmt->close();
