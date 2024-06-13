@@ -78,9 +78,12 @@ $conn->close();
                 
                         // Define o sinal baseado no tipo de transação
                         $sign = $transaction_type == 'send' ? '-' : '+';
-                        $class = $sign == '-' ? "Receive" : "Send";  //Explicar essa parada pro Roviero
-                
-                        echo "<p class='$class' >$transaction_date : $sign R$ " . number_format($amount, 2, ',', '.') . " - $email</p>";
+                        $class = $sign == '-' ? "Send" : "Receive";  //Explicar essa parada pro Roviero
+                        
+                        $color = $class == 'Send' ? "color: red;" : "color: green;"; // Ajustado para estilo CSS válido
+
+                    echo "<p class='$class' style='$color'>$transaction_date : $sign R$ " . number_format($amount, 2, ',', '.') . " - $email</p>";
+
                     }
                 } else {
                     echo "<p>Sem transações registradas.</p>";
@@ -100,7 +103,7 @@ $conn->close();
                 </div>
             </div>
 
-            <div class="balance">
+            <div class="balance" style="background-color: #f9f9f9;">
                 <h2>Saldo</h2>
                 <div class="balance-container">
                     <input type="checkbox" id="toggle-balance" class="toggle-checkbox">

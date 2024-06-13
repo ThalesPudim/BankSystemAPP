@@ -3,6 +3,7 @@
 *{
   margin: 0px;
   box-sizing: border-box;
+  font-family: montserrat;
 }
 
 body{
@@ -42,12 +43,67 @@ header{
   padding: 20px; 
   width: 80%; 
   max-width: 600px; 
-  margin: 10px 0; 
-  background-color: #f0f0f0; 
+  margin: 10px;
+  margin-left: 45px;
+  background-color: #D3D3D3; 
   border-radius: 10px; 
+  box-shadow: 10px 14px 18px rgba(0, 0, 0, 0.3);
 }
 
 .objetivos img {
   margin-right: 20px; 
   max-width: 50px;
+}
+
+.dados{
+  border: solid #003366 1px;
+  margin: 15vh 50px 15vh 50px;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #D3D3D3;
+  height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: montserrat;
+  box-shadow: 10px 14px 18px rgba(0, 0, 0, 0.3);
+}
+
+input{
+  margin-bottom: 10px;
+  height: 50px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: #D3D3D3;
+  border: 1px solid gray; /* Cor padrão da borda */
+  padding: 8px;
+  font-size: 16px;
+  outline: none; /* Remove o contorno padrão do navegador ao focar */
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #003366; /* Cor da borda quando o input está em foco */
+}
+
+.enviar {
+  background-color: #003366;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  height: 100px;
+  width: 400px;
+  font-size: larger;
+  box-shadow: 10px 14px 18px rgba(0, 0, 0, 0.3);
+}
+
+.enviar:hover {
+  background-color: #D3D3D3;
+  color: #003366;
+  border: solid 1px #003366;
 }
