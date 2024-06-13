@@ -33,8 +33,7 @@ include '../DbConnection/auth.php';
 
     <div class="continuar">
     </div>
-
-    <script src="../Script/loan_page.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         // Função para carregar o histórico de empréstimos via AJAX
         function loadLoanHistory() {
@@ -47,9 +46,28 @@ include '../DbConnection/auth.php';
             };
             xhr.send();
         }
-
         // Carrega o histórico de empréstimos quando a página é carregada
         window.onload = loadLoanHistory;
+
+        function sacar(loanRequestId) {
+            $.ajax({
+                type: 'POST',
+                url: '../DBConnection/loanrecieve.php',
+                data: { loanRequestId: loanRequestId },
+                dataType: 'json',
+                success: function(response) {
+                    alert(response.message); // Exibe uma mensagem de sucesso ou erro
+                    // Atualize a interface do usuário conforme necessário após o saque
+                    if (response.status === 'success') {
+                        // Exemplo: recarregue a lista de empréstimos
+                        window.location.reload(); // Atualiza a página após o saque
+                    }
+                },
+                error: function() {
+                    alert('Erro ao processar a solicitação.'); // Exibe uma mensagem de erro genérica
+                }
+            });
+        }
     </script>
 </body>
 </html>

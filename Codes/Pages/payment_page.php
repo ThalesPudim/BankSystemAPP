@@ -51,6 +51,32 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        function updateBalance() { 
+            $.ajax({
+                url: '../DBConnection/get_balance.php',
+                method: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    if (response.balance !== undefined) {
+                        $('#balance').text('R$: ' + response.balance);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Erro ao buscar o saldo:', error);
+                }
+            });
+        }
+
+        // Atualiza o saldo a cada 5 segundos
+        setInterval(updateBalance, 5000);
+        
+        // Atualiza o saldo ao carregar a página
+        updateBalance();
+    });
+    </script>
     <title>Banco - Protótipo</title>
     <link rel="stylesheet" type="text/css" href="../Style/payment.css?v=2">
 </head>
@@ -103,7 +129,7 @@ $conn->close();
             <div class="balance" style="background-color: #f9f9f9;">
                 <h2>Saldo</h2>
                 <div class="balance-container">
-                    <p>R$ <?php echo number_format($_SESSION['balance'], 2, ',', '.'); ?></p>
+                    <p id="balance">R$ <?php echo number_format($_SESSION['balance'], 2, ',', '.'); ?></p>
                 </div>
             </div>
             
@@ -143,7 +169,7 @@ $conn->close();
                     </div>
                 </div>
             </div>
-
+                
             <div class="purple-line"></div> 
         </div>
     </div>

@@ -29,14 +29,28 @@ while ($row = $result->fetch_assoc()) {
         $status_color = 'orange';
     }
 
+    // Formata o valor para o formato brasileiro
     $formatted_amount = 'R$ ' . number_format($row['Amount'], 2, ',', '.');
 
+    // Verifica se o saque está disponível
+    $withdraw_available = $row['WithdrawAvailable'];
+
+    // Botão para saque
+    $withdraw_button = '';
+    if ($status == 'Aprovado' && $withdraw_available == 1) {
+        $withdraw_button = '<button onclick="sacar(' . $row['LoanRequestID'] . ')">SACAR</button>';
+    } elseif ($status == 'Aprovado' && $withdraw_available == 0) {
+        $withdraw_button = '<button disabled>Saque realizado</button>';
+    }
+
+    // Constrói o HTML para cada entrada de empréstimo
     $loans_html .= '
     <div class="loan-entry" style="border-bottom: solid ' . $status_color . ';">
-        <p>Empréstimo ID: ' . $row['LoanRequestID'] . '</p>
+        <p>Número do Protocolo: ' . $row['LoanRequestID'] . '</p>
         <p>Quantia: ' . $formatted_amount . '</p>
         <p>Data do Pedido: ' . $row['RequestDate'] . '</p>
         <p>Status: ' . $row['RequestStatus'] . '</p>
+        ' . $withdraw_button . '
     </div>';
 }
 

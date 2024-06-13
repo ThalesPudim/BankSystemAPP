@@ -1,7 +1,6 @@
 <?php
 //Garante a autenticação do usuário
 include '../DbConnection/auth.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -12,28 +11,29 @@ include '../DbConnection/auth.php';
     <title>Banco - Protótipo</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            function updateBalance() {
-                $.ajax({
-                    url: '../DBConnection/get_balance.php',
-                    method: 'GET',
-                    success: function(response) {
-                        if (response.balance !== undefined) {
-                            $('#balance').text('R$: ' + response.balance);
-                        }
-                    },
-                    error: function() {
-                        console.error('Erro ao buscar o saldo.');
+    $(document).ready(function() {
+        function updateBalance() { 
+            $.ajax({
+                url: '../DBConnection/get_balance.php',
+                method: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    if (response.balance !== undefined) {
+                        $('#balance').text('R$: ' + response.balance);
                     }
-                });
-            }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Erro ao buscar o saldo:', error);
+                }
+            });
+        }
 
-            // Atualiza o saldo a cada 5 segundos
-            setInterval(updateBalance, 5000);
-
-            // Atualiza o saldo ao carregar a página
-            updateBalance();
-        });
+        // Atualiza o saldo a cada 5 segundos
+        setInterval(updateBalance, 5000);
+        
+        // Atualiza o saldo ao carregar a página
+        updateBalance();
+    });
     </script>
     <link rel="stylesheet" type="text/css" href="../Style/style.css">
 </head>
@@ -55,7 +55,7 @@ include '../DbConnection/auth.php';
                     <span class="eye-icon"><img src="../images/saldo-visivel.png" alt="" style="max-width: 50px;"></span>
                     <span class="eye-icon-hidden"><img src="../images/saldo-nao-visivel.png" alt="" style="max-width: 50px;"></span>
                 </label>
-                <p class="balance fadeInLeft" id="balance">R$: <?php echo number_format($_SESSION['balance'], 2, ',', '.'); ?></p>
+                <p class="balance fadeInLeft" id="balance">R$ <?php echo number_format($_SESSION['balance'], 2, ',', '.'); ?></p>
             </div>
         </div>
         <div class="menu-wrapper">

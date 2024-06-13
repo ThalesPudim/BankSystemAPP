@@ -57,8 +57,11 @@ CREATE TABLE IF NOT EXISTS LoanRequests (
     Amount FLOAT NOT NULL,
     RequestDate DATE NOT NULL,
     RequestStatus VARCHAR(45),
+    WithdrawAvailable BOOLEAN NOT NULL DEFAULT FALSE,
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
+
+
 
 CREATE TABLE IF NOT EXISTS TransactionType (
     TransactionTypeID INT AUTO_INCREMENT PRIMARY KEY,
@@ -99,13 +102,15 @@ VALUES
     (2, 2),
     (3, 3);
 
--- Populando a tabela LoanRequests (com exemplo de uma solicitação pendente)
-INSERT INTO LoanRequests (UserID, Amount, RequestDate, RequestStatus)
+
+INSERT INTO LoanRequests (UserID, Amount, RequestDate, RequestStatus, WithdrawAvailable)
 VALUES 
-    (1, 1000.00, '2024-06-01', 'Pendente');
+    (1, 1000.00, '2024-06-01', 'Pendente', FALSE),
+    (2, 1500.00, '2024-06-05', 'Aprovado', TRUE);
 
 -- Populando a tabela TransactionType
 INSERT INTO TransactionType (TypeName)
 VALUES 
     ('Enviar'),
     ('Receber');
+    
