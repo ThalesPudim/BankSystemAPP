@@ -19,7 +19,7 @@ include '../DbConnection/auth.php';
                 dataType: 'json',
                 success: function(response) {
                     if (response.balance !== undefined) {
-                        $('#balance').text('R$: ' + response.balance);
+                        $('#balance').text('R$ ' + response.balance);
                     }
                 },
                 error: function(xhr, status, error) {
@@ -55,7 +55,7 @@ include '../DbConnection/auth.php';
                     <span class="eye-icon"><img src="../images/saldo-visivel.png" alt="" style="max-width: 50px;"></span>
                     <span class="eye-icon-hidden"><img src="../images/saldo-nao-visivel.png" alt="" style="max-width: 50px;"></span>
                 </label>
-                <p class="balance fadeInLeft" id="balance">R$ <?php echo number_format($_SESSION['balance'], 2, ',', '.'); ?></p>
+                <p class="balance fadeInLeft" id="balance"></p>
             </div>
         </div>
         <div class="menu-wrapper">
