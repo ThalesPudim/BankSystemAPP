@@ -68,6 +68,17 @@ include '../DbConnection/auth.php';
                 }
             });
         }
-    </script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const backIcon = document.getElementById('back-icon');
+
+            backIcon.addEventListener('click', function () {
+                // Redireciona para a próxima página após um pequeno atraso
+                setTimeout(() => {
+                    window.location.href = 'home_page.php'; 
+                }, 250); 
+            });
+        });
+    </script> 
 </body>
 </html>
