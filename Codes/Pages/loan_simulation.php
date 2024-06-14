@@ -27,16 +27,16 @@ include '../DbConnection/auth.php';
                     <input type="email" name="email" id="emailInput" placeholder="E-mail" required>
                 </div>
                 <div class="input-group">
-                    <input type="text" name="amount" id="amountInput" placeholder="Quantia a transferir (R$ 00,00)" required onkeypress="return onlyNumbersAndDots(event)" oninput="formatCurrency(this)">
+                    <input type="text" name="amount" id="amountInput" placeholder="Amount ($ 00,00)" required onkeypress="return onlyNumbersAndDots(event)" oninput="formatCurrency(this)">
                 </div>
                 <div class="input-group">
-                    <input type="text" name="cpf" id="cpfInput" placeholder="CPF (Apenas números)" required maxlength="14" oninput="formatarCPF(this)">
+                    <input type="text" name="cpf" id="cpfInput" placeholder="CPF or SSN or NIN (Just Numbers)" required maxlength="14" oninput="formatarCPF(this)">
                 </div>
                 <div class="input-group">
-                    <input type="text" name="name" id="nameInput" placeholder="Nome Completo" required>
+                    <input type="text" name="name" id="nameInput" placeholder="Complete Name" required>
                 </div>
             </form>
-            <button type="submit" id="sendButton" class="enviar">Enviar</button>
+            <button type="submit" id="sendButton" class="enviar">Send</button>
         </div>
 
 
@@ -47,11 +47,11 @@ include '../DbConnection/auth.php';
                 <div id="loadingAnimation" class="loading-animation"></div>
                 <div id="successMessage" class="success-message">
                     <img src="../images/sucess.png" alt="Success" style="width: 50px; height: 50px;">
-                    <p>Geração de Empréstimo bem sucedida!</p>
+                    <p>Successful Loan Generation!</p>
                 </div>
                 <div id="errorMessage" class="error-message">
                     <img src="../images/failure.png" alt="Error" style="width: 50px; height: 50px;">
-                    <p>Erro ao realizar o pagamento.</p>
+                    <p>Error when making the loan.</p>
                 </div>
             </div>
         </div>

@@ -25,13 +25,13 @@ document.getElementById('transferForm').addEventListener('submit', function(even
 
     // Verificar se os campos não estão vazios
     if (email.trim() === '' || amount.trim() === '') {
-        alert('Por favor, preencha todos os campos.');
+        alert('Please fill in all fields.');
         return; // Sai da função se algum campo estiver vazio
     }
 
     // Verificar saldo antes de mostrar a lightbox
     if (parseFloat(amount) > balance) {
-        alert('Saldo insuficiente.');
+        alert('Insufficient balance.');
         return; // Sai da função se o saldo for insuficiente
     }
 
@@ -79,7 +79,7 @@ document.getElementById('transferForm').addEventListener('submit', function(even
                     }, 2000); // Fechar a lightbox após 2 segundos
                 }
             } else {
-                errorMessage.querySelector('p').innerText = 'Erro ao processar a requisição'
+                errorMessage.querySelector('p').innerText = 'Error, try again.'
                 errorMessage.style.display = 'block';
     
                 // Fechar a lightbox após exibir o erro

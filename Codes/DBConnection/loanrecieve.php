@@ -50,14 +50,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Retorna uma resposta JSON de sucesso se o saque foi realizado com sucesso
         $response = array(
             'status' => 'success',
-            'message' => 'Saque realizado com sucesso.'
+            'message' => 'Withdrawal made successfully.'
         );
         echo json_encode($response);
     } else {
         // Retorna uma resposta JSON de erro se não foi possível sacar o empréstimo
         $response = array(
             'status' => 'error',
-            'message' => 'Não foi possível realizar o saque do empréstimo.'
+            'message' => 'The loan could not be withdrawn.'
         );
         echo json_encode($response);
     }
