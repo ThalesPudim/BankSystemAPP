@@ -19,6 +19,11 @@ header {
     align-items: center;
 }
 
+.center-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
 .icon-container img {
     width: 45px; 
     height: 45px; 

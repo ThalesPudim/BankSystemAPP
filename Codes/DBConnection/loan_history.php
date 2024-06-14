@@ -40,17 +40,28 @@ while ($row = $result->fetch_assoc()) {
     if ($status == 'Aprovado' && $withdraw_available == 1) {
         $withdraw_button = '<button onclick="sacar(' . $row['LoanRequestID'] . ')">SACAR</button>';
     } elseif ($status == 'Aprovado' && $withdraw_available == 0) {
-        $withdraw_button = '<button disabled>Saque realizado</button>';
+        $withdraw_button = '<button disabled>Withdrawal made</button>';
     }
+
+    $newStatus = '';
+    if ($row['RequestStatus'] == 'Aprovado'){
+        $newStatus = 'Approved';
+    } elseif ($row['RequestStatus'] == 'Negado') {
+        $newStatus = 'Refused';
+    } elseif ($row['RequestStatus'] == 'Pendente') {
+        $newStatus = 'Pending';
+    } 
 
     // Constrói o HTML para cada entrada de empréstimo
     $loans_html .= '
     <div class="loan-entry" style="border-bottom: solid ' . $status_color . ';">
-        <p>Número do Protocolo: ' . $row['LoanRequestID'] . '</p>
-        <p>Quantia: ' . $formatted_amount . '</p>
-        <p>Data do Pedido: ' . $row['RequestDate'] . '</p>
-        <p>Status: ' . $row['RequestStatus'] . '</p>
-        ' . $withdraw_button . '
+        <p>Protocol number: ' . $row['LoanRequestID'] . '</p>
+        <p>Amount: ' . $formatted_amount . '</p>
+        <p>Request Date: ' . $row['RequestDate'] . '</p>
+        <p>Status: ' . $newStatus . '</p>
+        <div class="button-animation">
+            ' . $withdraw_button . '
+        </div>
     </div>';
 }
 

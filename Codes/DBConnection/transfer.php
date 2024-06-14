@@ -10,7 +10,7 @@ $response = array();
 
 if ($amount <= 0) {
     $response['status'] = 'error';
-    $response['message'] = 'Valor inválido';
+    $response['message'] = 'Invalid Value';
     echo json_encode($response);
     exit;
 }
@@ -26,11 +26,11 @@ try {
     $stmt->close();
 
     if ($balance < $amount) {
-        throw new Exception("Saldo insuficiente");
+        throw new Exception("Insufficient Funds");
     }
 
     if ($user_email === $recipient_email) {
-        throw new Exception("Você não pode enviar dinheiro para si mesmo.");
+        throw new Exception("You cannot send money to yourself.");
     }
 
     $stmt = $conn->prepare("SELECT UserID, Balance FROM Users WHERE Email = ?");
@@ -41,7 +41,7 @@ try {
     $stmt->close();
 
     if (!$recipient_id) {
-        throw new Exception("Destinatário não encontrado");
+        throw new Exception("Recipient not found.");
     }
 
     $stmt = $conn->prepare("UPDATE Users SET Balance = Balance - ? WHERE UserID = ?");
@@ -85,7 +85,7 @@ try {
     $_SESSION['balance'] = $balance - $amount;
 
     $response['status'] = 'success';
-    $response['message'] = 'Pagamento realizado com sucesso!';
+    $response['message'] = 'Payment made successfully!';
     echo json_encode($response);
 } catch (Exception $e) {
     $conn->rollback();
