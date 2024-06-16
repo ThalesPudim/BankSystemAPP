@@ -69,7 +69,7 @@ include '../DbConnection/auth.php';
                     <p>Ticket</p>
                 </div>
                 <div>
-                    <img id="creditcard-icon" src="../images/credit-card.png" alt="CreditCard" style="width: 45px; height: 45px; margin-left: 0px; border-radius: 50%; border: 2px solid black;">
+                    <img id="creditcard-icon" src="../images/credit-card.png" alt="CreditCard" style="width: 45px; height: 45px; margin-left: 0px;">
                     <p>My Cards</p>
                 </div>
                 <!-- Adicione mais item para deixar bonito -->
