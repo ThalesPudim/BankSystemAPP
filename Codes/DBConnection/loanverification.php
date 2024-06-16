@@ -34,7 +34,7 @@ $result = $stmt->get_result();
 if ($result->num_rows == 0) {
     $response = array(
         'status' => 'error',
-        'message' => 'Email não corresponde à conta logada.'
+        'message' => 'Email does not match the logged in account.'
     );
     echo json_encode($response);
     exit;
@@ -46,7 +46,7 @@ $user = $result->fetch_assoc();
 if ($user['CPF'] !== $cpf) {
     $response = array(
         'status' => 'error',
-        'message' => 'CPF não corresponde ao email fornecido.'
+        'message' => 'CPF or SSN or NIN does not match the email provided.'
     );
     echo json_encode($response);
     exit;
@@ -67,7 +67,7 @@ $fullName = $user['FirstName'] . ' ' . $user['LastName'];
 if ($fullName !== $name) {
     $response = array(
         'status' => 'error',
-        'message' => 'Nome não corresponde ao nome na conta.'
+        'message' => 'Name does not match the name on the account.'
     );
     echo json_encode($response);
     exit;
@@ -84,7 +84,7 @@ $count = $result->fetch_assoc()['transaction_count'];
 if ($count < 5) {
     $response = array(
         'status' => 'error',
-        'message' => 'Por favor, movimente mais sua conta bancária.'
+        'message' => 'Please use your bank account more.'
     );
     echo json_encode($response);
     exit;
@@ -100,7 +100,7 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $response = array(
         'status' => 'error',
-        'message' => 'Você já possui um empréstimo pendente ou aprovado.'
+        'message' => 'You already have a loan pending.'
     );
     echo json_encode($response);
     exit;
@@ -115,13 +115,13 @@ $stmt->execute();
 if ($stmt->affected_rows > 0) {
     $response = array(
         'status' => 'success',
-        'message' => 'Solicitação de empréstimo enviada com sucesso.'
+        'message' => 'Loan request sent successfully.'
     );
     echo json_encode($response);
 } else {
     $response = array(
         'status' => 'error',
-        'message' => 'Erro ao enviar a solicitação de empréstimo.'
+        'message' => 'Error Try Again.'
     );
     echo json_encode($response);
 }

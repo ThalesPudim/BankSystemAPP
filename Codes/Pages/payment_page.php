@@ -89,7 +89,7 @@ $conn->close();
         </div>
         
         <div class="BalanceHistory">
-            <h2>Históricos de transferencia</h2>
+            <h2>Transfer Histories</h2>
             <div class="history-window">
                 <?php
                 if ($result->num_rows > 0) {
@@ -116,7 +116,7 @@ $conn->close();
         </div>
         
         <button class="Payment" id="paymentButton">
-            Realizar pagamento
+            Make a Transfer
         </button>
         
         <div class="PaymentScreen" id="paymentScreen">
@@ -127,7 +127,7 @@ $conn->close();
             </div>
 
             <div class="balance" style="background-color: #f9f9f9;">
-                <h2>Saldo</h2>
+                <h2>Balance</h2>
                 <div class="balance-container">
                     <p id="balance">R$ <?php echo number_format($_SESSION['balance'], 2, ',', '.'); ?></p>
                 </div>
@@ -138,12 +138,12 @@ $conn->close();
                 <div class="payment-form">
                     <form id="transferForm" method="post" action="../DBConnection/transfer.php">
                         <div class="input-group">
-                            <input type="email" name="email" id="emailInput" placeholder="Email do destinatário" required>
+                            <input type="email" name="email" id="emailInput" placeholder="Recipient's Email Addres" required>
                         </div>
                         <div class="input-group">
-                            <input type="number" name="amount" id="amountInput" placeholder="Quantia a transferir" required min="0.01" step="0.01">
+                            <input type="number" name="amount" id="amountInput" placeholder="Amount to Transfer" required min="0.01" step="0.01">
                         </div>
-                            <button type="submit" id="sendButton" style="background-color: #003366; color: white;">Enviar</button>
+                            <button type="submit" id="sendButton" style="background-color: #003366; color: white;">Sent</button>
                     </form>
                 </div>
             </div>
@@ -152,7 +152,7 @@ $conn->close();
                 <h2>Report</h2>
                 <div class="carousel-container alert">
                     <h2>Attention:</h2>
-                    <p>Por favor, verifique todas as informações antes de confirmar a transferência. Uma vez que o botão de envio seja pressionado, as ações não poderão ser revertidas.</p>
+                    <p>Please check all information before confirming the transfer. Once the submit button is pressed, actions cannot be reversed.</p>
                 </div>
             </div>
     
@@ -161,11 +161,11 @@ $conn->close();
                     <div id="loadingAnimation" class="loading-animation"></div>
                     <div id="successMessage" class="success-message">
                         <img src="../images/sucess.png" alt="Success" style="width: 50px; height: 50px;">
-                        <p>Pagamento realizado com sucesso!</p>
+                        <p>Payment made successfully!</p>
                     </div>
                     <div id="errorMessage" class="error-message">
                         <img src="../images/failure.png" alt="Error" style="width: 50px; height: 50px;">
-                        <p>Erro ao realizar o pagamento.</p>
+                        <p>Error making payment.</p>
                     </div>
                 </div>
             </div>

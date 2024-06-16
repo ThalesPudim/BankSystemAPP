@@ -98,3 +98,53 @@ footer {
   border-radius: 20px;
   padding: 10px;
 }
+
+.credit-card {
+  width: 300px;
+  height: 180px;
+  background: linear-gradient(135deg, #3b5998, #192f6a);
+  border-radius: 15px;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.card-chip {
+  width: 40px;
+  height: 30px;
+  background: gold;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.center-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.card-number {
+  margin-top: 60px;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+}
+
+.card-name,
+.card-expiry {
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+.card-name {
+  text-transform: uppercase;
+}
+
+.card-expiry {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}

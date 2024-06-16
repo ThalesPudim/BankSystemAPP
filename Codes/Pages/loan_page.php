@@ -22,13 +22,13 @@ include '../DbConnection/auth.php';
         <!-- Caixa de informação com bordas arredondadas -->
 
         <div class="loan-container">
-            <h2>Histórico de Empréstimos</h2>
+            <h2 class="center-text">Loan History</h2>
             <div class="info-box" id="loan-history">
-                <!-- Empréstimos serão carregados aqui via AJAX -->
+                <!-- Empréstimos serão carregados aqui via AJAX --> 
             </div>
         </div>
         <!-- Botão para gerar novos empréstimos -->
-        <button class="generate-loan-button" onclick="window.location.href='loan.php'">Gerar Empréstimo</button>
+        <button class="generate-loan-button" onclick="window.location.href='loan.php'">Generate Loan</button>
     </div>
 
     <div class="continuar">
@@ -64,7 +64,7 @@ include '../DbConnection/auth.php';
                     }
                 },
                 error: function() {
-                    alert('Erro ao processar a solicitação.'); // Exibe uma mensagem de erro genérica
+                    alert('Error.'); // Exibe uma mensagem de erro genérica
                 }
             });
         }

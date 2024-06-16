@@ -23,7 +23,7 @@ include '../DbConnection/auth.php';
                     }
                 },
                 error: function(xhr, status, error) {
-                    console.error('Erro ao buscar o saldo:', error);
+                    console.error('ERROR:', error);
                 }
             });
         }
@@ -48,7 +48,7 @@ include '../DbConnection/auth.php';
             </div>
         </div>
         <div class="balance">
-            <h2>Saldo</h2>
+            <h2>Balance</h2>
             <div class="balance-container">
                 <input type="checkbox" id="toggle-balance" class="toggle-checkbox">
                 <label for="toggle-balance" class="toggle-label">
@@ -104,12 +104,12 @@ include '../DbConnection/auth.php';
             <img src="../images/user_icon.png" alt="User">
         </div>
         <h2>Informações do Perfil</h2>
-        <p><strong>Nome:</strong> <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?></p>
-        <p><strong>Data de Nascimento:</strong> <?php echo date('d/m/Y', strtotime($_SESSION['date_of_birth'])); ?></p>
+        <p><strong>Name:</strong> <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?></p>
+        <p><strong>Date of birth:</strong> <?php echo date('d/m/Y', strtotime($_SESSION['date_of_birth'])); ?></p>
         <p><strong>Email:</strong> <?php echo $_SESSION['email']; ?></p>
-        <p><strong>Tipo de Conta:</strong> <?php echo $account_type; ?></p>
+        <p><strong>Account Type:</strong> <?php echo $account_type; ?></p>
         <div class="botao-sair" id="logoutButton">
-            <h2>Sair do aplicativo</h2><img src="../images/Logout.png" alt="">
+            <h2>Leave App</h2><img src="../images/Logout.png" alt="">
         </div>
     </div>
 
@@ -118,17 +118,18 @@ include '../DbConnection/auth.php';
         <div class="icone-paineis">
             <img src="../images/QuestionMark.png" alt="Help">
         </div>
-        <h2>Ajuda</h2>
-        <p>Sei la informação</p>
-        <p>Para suporte, entre em contato conosco.</p>
+        <h2>Needing help?</h2>
+        <p>If you are experiencing any issues or need assistance, we are here to help! Please contact us through one of the following methods:</p>
+        <p><strong>Email: </strong>suport@suport.com </p>
+        <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
     </div>
 
     <div id="logoutLightbox" class="lightbox">
     <div class="lightbox-content">
-        <h2>Deseja realmente deslogar?</h2>
+        <h2>Do you really want to log out?</h2>
         <div class="button-container">
-            <button id="confirmLogoutButton" type="button">Sim</button>
-            <button id="cancelButton" type="button">Cancelar</button>
+            <button id="confirmLogoutButton" type="button">Yes</button>
+            <button id="cancelButton" type="button">Cancell</button>
         </div>
     </div>
 </div>
