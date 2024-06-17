@@ -96,6 +96,12 @@ header {
 }
 
 .loan-entry {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 10;
     background-color: #ffffff;
     border-radius: 10px;
     width: 100%;
@@ -105,6 +111,32 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-bottom: solid green;
+}
+
+.loan-entry:hover button{
+    transition: opacity 0.3s ease-in-out;
+    height: 50px;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.loan-entry button{
+    width: 100%;
+    height: 40px;
+    background-color: grey;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: green;
+    z-index: 5;
+    transition: height 0.3s ease-in-out;
+    overflow: hidden;
 }
 
 .loan-entry p {
