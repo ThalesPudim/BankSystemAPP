@@ -155,9 +155,11 @@ Card page, this page would be responsible for viewing transfers made with the ca
 1. <span style="font-size:24px;">Thales</span> : https://github.com/ThalesPudim
 2. <span style="font-size:24px;">Filipe Roviero</span> : https://github.com/FilipeRoviero
 
+# Special thanks
 
+**For everyone who made it this far, thank you for visiting. I hope you enjoyed the code.**
 
-
+![FaloutBoy](Scripts/static/img/FalloutBoy.webp)
 
 
 
