@@ -19,7 +19,7 @@ This code has the sole purpose of learning, any and all similarities are merely 
 
 # Project setup
 
-<span style="font-size:24px;">After cloning the repository</span>
+<span style="font-size:24px;">After cloning the repository, you must place it in the htdcocs folder of your xampp</span>
 
 ![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/37e56e13-48a8-40ca-8032-272d7468fe3f)
 
@@ -27,7 +27,49 @@ This code has the sole purpose of learning, any and all similarities are merely 
 
 After that, you must create a new instance on your MySQL workbench, and paste the code!
 
+***
+
 ![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/daa4c053-0647-4c9c-95bd-176e05a19c7c)
 
 If you did everything correctly your local host should look like this!
+
+***
+
+# Project 
+
+<span style="font-size:24px;">After these steps, you can now open index.html on your host location, within the browser!!</span>
+
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/f6d1f90a-7758-467d-8a49-ab18c6009327)
+
+Should be like this, if all steps were done corretly 
+
+***
+
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/ca483a7c-515d-4867-8405-169d99fc6c00)
+
+Use the following login!
+
+```bash
+  joao.silva@example.com
+  senha123
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
