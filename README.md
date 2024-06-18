@@ -47,13 +47,16 @@ Should be like this, if all steps were done corretly
 
 ![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/ca483a7c-515d-4867-8405-169d99fc6c00)
 
-Use the following login!
+Use the following login if your just want to skip de register step!
 
 ```bash
   joao.silva@example.com
   senha123
 ```
 
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/5d39fa5e-b037-401d-bcdf-f19c4cfda3f5)
+
+Or you can just create your own account, following the structure
 
 
 
