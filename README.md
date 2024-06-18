@@ -62,7 +62,8 @@ Or you can just create your own account, following the structure.
 
 Once logged in, this is the app's home page.
 
-![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/939968ed-a7ba-4d9b-a8e0-1757c0c80026)
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/46271588-b6b1-4126-9120-b3b2e43a11e9)
+
 
 In this page you can see, all our functionalities, I will only focus on those that are 100% implemented.
 
