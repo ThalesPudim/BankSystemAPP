@@ -100,7 +100,8 @@ If any problems occur during the transfer, such as:
 2. Trying to transfer more money than you have in your account
 3. Recipient email does not exist
 
-![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/3e591dd6-ecaf-488c-b495-84897954e77c)
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/8789a1d8-67d3-4f78-acab-61f85ca18e60)
+
 
 ![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/02c8fb24-1084-4c06-a987-148e69e89d84)
 
