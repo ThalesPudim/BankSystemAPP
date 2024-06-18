@@ -13,7 +13,7 @@ This code is a bank app, based on several virtual banks. Created and developed i
 
 1.Github
 
-##Important
+## Important
 
 This code has the sole purpose of learning, any and all similarities are merely coincidence! 
 
