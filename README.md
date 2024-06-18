@@ -121,10 +121,21 @@ The withdrawal has already been made
 
 Withdrawal is available
 
+***
 
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/7ed15703-080f-4263-8e18-1e54d73eaa8d)
 
+On this page you can follow the instructions to generate your loan!!
+You must need to choice one, of the following options on this page
 
+***
 
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/f7bcce82-e0f0-4985-8fe7-c5a4920f3b43)
+
+On this page, similar checks are carried out as on the transfer page
+<span style="font-size:24px;">If you want to test error prevention, feel free</span>
+
+For loan approval or denial, the main idea is an admin account, which will be able to check availability, this admin functionality has not yet been implemented so any and all changes to the loan are made directly in the database
 
 
 
