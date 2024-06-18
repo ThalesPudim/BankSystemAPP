@@ -138,7 +138,7 @@ On this page, similar checks are carried out as on the transfer page
 
 ***
 
-For loan approval or denial, the main idea is an admin account, which will be able to check availability, this admin functionality has not yet been implemented so any and all changes to the loan are made directly in the database
+**For loan approval or denial, the main idea is an admin account, which will be able to check availability, this admin functionality has not yet been implemented so any and all changes to the loan are made directly in the database**
 
 ***
 
