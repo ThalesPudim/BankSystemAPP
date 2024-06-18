@@ -51,8 +51,6 @@ Use the following login if your just want to skip de register step!
 
 ```bash
   joao.silva@example.com
-```
-```bash
   senha123
 ```
 
@@ -85,8 +83,6 @@ If you just want to try making a transfer, put the following information in the 
 
 ```bash
   maria@example.com
-```
-```bash
   45
 ```
 ![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/f0e2efaf-991b-47ea-87af-d69ea7dc2c52)
@@ -96,6 +92,16 @@ If any problems occur during the transfer, such as:
 1. Trying to transfer to your own account
 2. Trying to transfer more money than you have in your account
 3. Recipient email does not exist
+
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/3e591dd6-ecaf-488c-b495-84897954e77c)
+
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/02c8fb24-1084-4c06-a987-148e69e89d84)
+
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/0e49278a-b3b8-4ab6-a94d-5a35bc2a50ed)
+
+# Loan Page
+
+
 
 
 
