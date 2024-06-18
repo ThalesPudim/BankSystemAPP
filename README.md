@@ -33,8 +33,6 @@ This code has the sole purpose of learning, any and all similarities are merely 
 
 If you did everything correctly your local host should look like this!
 
-***
-
 # Login
 
 <span style="font-size:24px;">After these steps, you can now open index.html on your host location, within the browser!!</span>
