@@ -159,7 +159,8 @@ Card page, this page would be responsible for viewing transfers made with the ca
 
 **For everyone who made it this far, thank you for visiting. I hope you enjoyed the code.**
 
-![FaloutBoy](Scripts/static/img/FalloutBoy.webp)
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/aa0d5d9a-f64c-4a52-bfb2-db731ab8412a)
+
 
 
 
