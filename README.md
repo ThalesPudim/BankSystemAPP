@@ -135,15 +135,22 @@ You must need to choice one, of the following options on this page
 On this page, similar checks are carried out as on the transfer page
 <span style="font-size:24px;">If you want to test error prevention, feel free</span>
 
+
+***
+
 For loan approval or denial, the main idea is an admin account, which will be able to check availability, this admin functionality has not yet been implemented so any and all changes to the loan are made directly in the database
 
+***
+
+# Visual Pages
 
 
+The next pages are just visuals, ideas that have not been implemented yet
+
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/9d91f6e9-1c36-4791-80b9-ab3253a98265)
 
 
-
-
-
+Card page, this page would be responsible for viewing transfers made with the card, being able to exchange cards, request a new one, cancel the card, among other features
 
 
 
