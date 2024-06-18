@@ -51,6 +51,8 @@ Use the following login if your just want to skip de register step!
 
 ```bash
   joao.silva@example.com
+```
+```bash
   senha123
 ```
 
@@ -83,6 +85,8 @@ If you just want to try making a transfer, put the following information in the 
 
 ```bash
   maria@example.com
+```
+```bash
   45
 ```
 ![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/f0e2efaf-991b-47ea-87af-d69ea7dc2c52)
