@@ -70,57 +70,58 @@
 </head>
 <body>
     <div class="register-container">
-        <h1>Crie sua Conta</h1>
+        <h1>Create your account</h1>
         <form id="registerForm" method="POST" action="../DBConnection/register.php">
-            <input type="text" id="firstName" name="firstName" class="register-input" placeholder="Primeiro Nome">
+            <input type="text" id="firstName" name="firstName" class="register-input" placeholder="First Name">
             <div class="error-message"></div>
 
-            <input type="text" id="lastName" name="lastName" class="register-input" placeholder="Último Nome">
+            <input type="text" id="lastName" name="lastName" class="register-input" placeholder="Last Name">
             <div class="error-message"></div>
 
-            <input type="date" id="birthday" name="birthday" class="register-input" placeholder="Data de Aniversário">
+            <input type="date" id="birthday" name="birthday" class="register-input" placeholder="Date of Birth">
             <div class="error-message"></div>
 
-            <input type="text" id="address" name="address" class="register-input" placeholder="Endereço">
+            <input type="text" id="address" name="address" class="register-input" placeholder="Address
+            ">
             <div class="error-message"></div>
 
-            <input type="text" id="city" name="city" class="register-input" placeholder="Cidade">
+            <input type="text" id="city" name="city" class="register-input" placeholder="City">
             <div class="error-message"></div>
 
-            <input type="text" id="state" name="state" class="register-input" placeholder="Estado">
+            <input type="text" id="state" name="state" class="register-input" placeholder="State">
             <div class="error-message"></div>
 
             <input type="text" id="zipcode" name="zipcode" class="register-input" placeholder="CEP">
             <div class="error-message"></div>
 
-            <input type="text" id="country" name="country" class="register-input" placeholder="País">
+            <input type="text" id="country" name="country" class="register-input" placeholder="Country">
             <div class="error-message"></div>
 
             <input type="email" id="email" name="email" class="register-input" placeholder="Email">
             <div class="error-message"></div>
 
-            <input type="text" id="cpf" name="cpf" class="register-input" placeholder="CPF">
+            <input type="text" id="cpf" name="cpf" class="register-input" placeholder="CPF/CNN">
             <div class="error-message"></div>
 
             <input type="password" id="password" name="password" class="register-input" placeholder="Senha">
             <div class="error-message"></div>
 
             <select id="gender" name="gender" class="register-input">
-                <option value="" disabled selected>Gênero</option>
-                <option value="1">Homem</option>
-                <option value="2">Mulher</option>
-                <option value="3">Outro</option>
+                <option value="" disabled selected>Gender</option>
+                <option value="1">Man</option>
+                <option value="2">Woman</option>
+                <option value="3">Other</option>
             </select>
             <div class="error-message"></div>
 
             <select id="accountType" name="accountType" class="register-input">
-                <option value="" disabled selected>Tipo da Conta</option>
-                <option value="1">Poupança</option>
-                <option value="2">Corrente</option>
+                <option value="" disabled selected>Account Type</option>
+                <option value="1">Saving</option>
+                <option value="2">Checking</option>
             </select>
             <div class="error-message"></div>
 
-            <button type="submit" id="registerButton" class="register-button">Registrar</button>
+            <button type="submit" id="registerButton" class="register-button">Register</button>
         </form>
         <div id="errorMessage" class="error-message"></div>
     </div>
