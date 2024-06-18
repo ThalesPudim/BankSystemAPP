@@ -150,7 +150,12 @@ The next pages are just visuals, ideas that have not been implemented yet
 
 Card page, this page would be responsible for viewing transfers made with the card, being able to exchange cards, request a new one, cancel the card, among other features
 
+# Authors
 
+1. <span style="font-size:24px;">Thales</span>
+  1.1. https://github.com/ThalesPudim
+2. <span style="font-size:24px;">Filipe Roviero</span>
+  2.1. https://github.com/FilipeRoviero
 
 
 
