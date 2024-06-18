@@ -11,7 +11,7 @@ This code is a bank app Mobile-focused, based on several virtual banks. Created 
 
 ## Services Used
 
-1.Github
+1. Github
 
 ## Important
 
@@ -104,6 +104,37 @@ If any problems occur during the transfer, such as:
 ![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/0e49278a-b3b8-4ab6-a94d-5a35bc2a50ed)
 
 # Loan Page
+
+On this page all loan history is shown, whether it is negative, positive or in progress
+
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/023201b1-deb0-4fd5-ac08-1c4ef7fe7ef5)
+
+As you can see, the interface shows the loan status with the color below the box
+
+When approved, it has 2 paths
+
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/798624ee-d976-46cf-ac81-b3f75aace01a)
+
+The withdrawal has already been made
+
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/996b3a3e-1d2e-4d31-849b-ef66683f8d42)
+
+Withdrawal is available
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
