@@ -72,12 +72,26 @@ In this page you can see, all our functionalities, I will only focus on those th
 
 At the beginning of this page, it shows you all transfers made from this account, both receiving money and sending money.
 
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/e2c16d55-01dc-488a-94f9-2b27c76c1b44)
 
+After clicking on the transfer button
 
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/bb376cb6-0f8b-4e7a-810c-469fb5e09472)
 
+This is the page responsible for making transfers! 
+If you just want to try making a transfer, put the following information in the input!
 
+```bash
+  maria@example.com
+  45
+```
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/f0e2efaf-991b-47ea-87af-d69ea7dc2c52)
 
+If any problems occur during the transfer, such as:
 
+1. Trying to transfer to your own account
+2. Trying to transfer more money than you have in your account
+3. Recipient email does not exist
 
 
 
