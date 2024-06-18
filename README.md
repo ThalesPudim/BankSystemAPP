@@ -152,10 +152,8 @@ Card page, this page would be responsible for viewing transfers made with the ca
 
 # Authors
 
-1. <span style="font-size:24px;">Thales</span>
-  1.1. https://github.com/ThalesPudim
-2. <span style="font-size:24px;">Filipe Roviero</span>
-  2.1. https://github.com/FilipeRoviero
+1. <span style="font-size:24px;">Thales</span> : https://github.com/ThalesPudim
+2. <span style="font-size:24px;">Filipe Roviero</span> : https://github.com/FilipeRoviero
 
 
 
