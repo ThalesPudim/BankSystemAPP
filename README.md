@@ -19,13 +19,13 @@ This code has the sole purpose of learning, any and all similarities are merely 
 
 # Project setup
 
-<span style="font-size:24px;">After cloning the repository, you must place it in the htdcocs folder of your xampp</span>
+**<span style="font-size:24px;">After cloning the repository, you must place it in the htdcocs folder of your xampp</span>**
 
 ![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/37e56e13-48a8-40ca-8032-272d7468fe3f)
 
 <span style="font-size:24px;">Open this folder, and copy the entire SQL command!</span>
 
-**After that, you must create a new instance on your MySQL workbench, and paste the code!**
+**Then, you must create a new instance on your MySQL workbench, and paste the code!**
 
 ***
 
