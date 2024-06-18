@@ -71,10 +71,12 @@ In this page you can see, all our functionalities, I will only focus on those th
 ![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/306e1d57-d54a-4560-976a-dd8720fd68b0)
 
 At the beginning of this page, it shows you all transfers made from this account, both receiving money and sending money.
+***
 
 ![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/e2c16d55-01dc-488a-94f9-2b27c76c1b44)
 
 After clicking on the transfer button
+***
 
 ![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/bb376cb6-0f8b-4e7a-810c-469fb5e09472)
 
@@ -87,6 +89,9 @@ If you just want to try making a transfer, put the following information in the 
 ```bash
   45
 ```
+
+***
+
 ![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/f0e2efaf-991b-47ea-87af-d69ea7dc2c52)
 
 If any problems occur during the transfer, such as:
