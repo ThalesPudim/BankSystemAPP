@@ -1,7 +1,7 @@
 ![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/a9f588c0-8be2-4b98-8fac-709447666aae)
 
 # Bank APP
-This code is a bank app, based on several virtual banks. Created and developed in Visual Studio Code! :D
+This code is a bank app Mobile-focused, based on several virtual banks. Created and developed in Visual Studio Code! :D
 
 ## Technology
 
@@ -35,7 +35,7 @@ If you did everything correctly your local host should look like this!
 
 ***
 
-# Project 
+# Login
 
 <span style="font-size:24px;">After these steps, you can now open index.html on your host location, within the browser!!</span>
 
@@ -56,14 +56,21 @@ Use the following login if your just want to skip de register step!
 
 ![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/5d39fa5e-b037-401d-bcdf-f19c4cfda3f5)
 
-Or you can just create your own account, following the structure
+Or you can just create your own account, following the structure.
 
+# Home Page
 
+Once logged in, this is the app's home page.
 
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/939968ed-a7ba-4d9b-a8e0-1757c0c80026)
 
+In this page you can see, all our functionalities, I will only focus on those that are 100% implemented.
 
+# Payment Page
 
+![image](https://github.com/ThalesPudim/BankSystemAPP/assets/160556088/306e1d57-d54a-4560-976a-dd8720fd68b0)
 
+At the beginning of this page, it shows you all transfers made from this account, both receiving money and sending money.
 
 
 
