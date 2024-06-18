@@ -38,7 +38,7 @@ while ($row = $result->fetch_assoc()) {
     // Botão para saque
     $withdraw_button = '';
     if ($status == 'Aprovado' && $withdraw_available == 1) {
-        $withdraw_button = '<button onclick="sacar(' . $row['LoanRequestID'] . ')">SACAR</button>';
+        $withdraw_button = '<button onclick="sacar(' . $row['LoanRequestID'] . ')">Withdraw</button>';
     } elseif ($status == 'Aprovado' && $withdraw_available == 0) {
         $withdraw_button = '<button disabled>Withdrawal made</button>';
     }
