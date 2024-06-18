@@ -25,7 +25,7 @@ This code has the sole purpose of learning, any and all similarities are merely 
 
 <span style="font-size:24px;">Open this folder, and copy the entire SQL command!</span>
 
-After that, you must create a new instance on your MySQL workbench, and paste the code!
+**After that, you must create a new instance on your MySQL workbench, and paste the code!**
 
 ***
 
